@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Quinton Stocton Photography</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-portfolio {
+            margin-top: 80px;
+            padding: 5rem 2rem 3rem;
+            text-align: center;
+            background: radial-gradient(ellipse at center, #BA0606 0%, #000000 70%);
+        }
+
+        .hero-portfolio h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .hero-portfolio h1 .red {
+            color: #BA0606;
+        }
+
+        .hero-portfolio p {
+            font-size: 1.2rem;
+            color: #E5E0E0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .filter-section {
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            background: #000;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.8rem;
+            background: #474747;
+            color: #fff;
+            border: 2px solid #474747;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #BA0606;
+            border-color: #BA0606;
+            transform: translateY(-2px);
+        }
+
+        .portfolio-grid {
+            padding: 3rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            height: 350px;
+            background: #474747;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(186, 6, 6, 0.5);
+        }
+
+        .portfolio-item::before {
+            content: 'IMAGE PLACEHOLDER';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2rem;
+            color: #fff;
+            font-weight: 600;
+            text-align: center;
+            display: none;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+
+        .portfolio-overlay h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-overlay p {
+            color: #E5E0E0;
+            font-size: 0.9rem;
+        }
+
+        .portfolio-section {
+            padding: 3rem 2rem 1rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .portfolio-section h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .portfolio-section h2 .red {
+            color: #BA0606;
+        }
+
+        .cta-section {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: #0a0a0a;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .cta-section h2 .red {
+            color: #BA0606;
+        }
+
+        .cta-section p {
+            color: #E5E0E0;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: #BA0606;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: #8B0000;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-portfolio h1 {
+                font-size: 2.2rem;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Drawer Navigation -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <nav class="drawer-nav" id="drawerNav">
+        <div class="drawer-header">
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+            <button class="drawer-close" id="drawerClose">&times;</button>
+        </div>
+        <ul class="drawer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#collections">Collections</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="mission.html">Our Mission</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+            <li><a href="affiliate.html">Affiliate Links</a></li>
+            <li><a href="social.html">Social</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="social-icons drawer-social-icons"><a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a><a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a><a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a><a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a><a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a></div>
+    </nav>
+
+    <nav class="nav-header">
+        <div class="nav-left">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="mission.html">Our Mission</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="affiliate.html">Affiliate Links</a></li>
+            <li><a href="social.html">Social</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-portfolio">
+        <h1><span class="white">Quinton Stocton</span> <span class="red">Photography's Portfolio</span></h1>
+        <p>Explore our work across weddings, portraits, events, branding, and more.</p>
+    </section>
+
+    <section class="filter-section">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Work</button>
+            <button class="filter-btn" data-filter="latest">Latest Projects</button>
+            <button class="filter-btn" data-filter="favorites">Favorites</button>
+        </div>
+    </section>
+
+    <section class="portfolio-section">
+        <h2>My Most <span class="red">Recent</span> Project</h2>
+        <div class="portfolio-grid" id="portfolioGrid">
+            <div class="portfolio-item" data-category="latest" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/c7cdd2a8d2b149e584c2ab455c7a4d4c.png">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/c7cdd2a8d2b149e584c2ab455c7a4d4c.png" alt="Recent Project 1" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Recent Project 1</h3>
+                    <p>Latest Work</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="latest" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/f26b7a3e677451e319f942c1ce32b7e8.png">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/f26b7a3e677451e319f942c1ce32b7e8.png" alt="Recent Project 2" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Recent Project 2</h3>
+                    <p>Latest Work</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="latest" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/1d7976187dfc8b43f62608d076e3afd4.jpg">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/1d7976187dfc8b43f62608d076e3afd4.jpg" alt="Recent Project 3" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Recent Project 3</h3>
+                    <p>Latest Work</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="latest" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/b877af4de1aa28aeb0a16eb91b1cbea3.png">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/b877af4de1aa28aeb0a16eb91b1cbea3.png" alt="Recent Project 4" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Recent Project 4</h3>
+                    <p>Latest Work</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="latest" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/7c7832b73495d4e5565588ace2bec914.png">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/7c7832b73495d4e5565588ace2bec914.png" alt="Recent Project 5" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Recent Project 5</h3>
+                    <p>Latest Work</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="latest" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/cf7a1b81ee4045f14c27c7b259c28332.png">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/cf7a1b81ee4045f14c27c7b259c28332.png" alt="Recent Project 6" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Recent Project 6</h3>
+                    <p>Latest Work</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="latest" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/c41115e24d0f15275c3ef549dfc4e89e.png">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/c41115e24d0f15275c3ef549dfc4e89e.png" alt="Recent Project 7" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Recent Project 7</h3>
+                    <p>Latest Work</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="latest" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/bceae9f0aa09fd3aee01251881de4c1b.jpg">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/bceae9f0aa09fd3aee01251881de4c1b.jpg" alt="Recent Project 8" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Recent Project 8</h3>
+                    <p>Latest Work</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="latest" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/9ae6442a1012739695b4e03afda38402.jpg">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/9ae6442a1012739695b4e03afda38402.jpg" alt="Recent Project 9" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Recent Project 9</h3>
+                    <p>Latest Work</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="latest" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/40b3f6643c123b241a80076c044c832e.png">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/40b3f6643c123b241a80076c044c832e.png" alt="Recent Project 10" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Recent Project 10</h3>
+                    <p>Latest Work</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio-section">
+        <h2>Some Favorites From Over the <span class="red">Years</span></h2>
+        <div class="portfolio-grid" id="portfolioGrid2">
+            <div class="portfolio-item" data-category="favorites" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/b0185638d186f373c6e2a26ae06eacd5.jpg">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/b0185638d186f373c6e2a26ae06eacd5.jpg" alt="Favorite 1" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Favorite 1</h3>
+                    <p>Portfolio Highlight</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="favorites" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/edc24aae7d76d399425a8c48acb3e93f.jpg">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/edc24aae7d76d399425a8c48acb3e93f.jpg" alt="Favorite 2" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Favorite 2</h3>
+                    <p>Portfolio Highlight</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="favorites" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/085d3e6723b1b8a42112d991f798bcd8.jpg">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/085d3e6723b1b8a42112d991f798bcd8.jpg" alt="Favorite 3" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Favorite 3</h3>
+                    <p>Portfolio Highlight</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="favorites" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/5fb7ff273996c025e25d612af19c981a.jpg">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/5fb7ff273996c025e25d612af19c981a.jpg" alt="Favorite 4" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Favorite 4</h3>
+                    <p>Portfolio Highlight</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="favorites" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/def808386307e5817d7d388114d252f5.jpg">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/def808386307e5817d7d388114d252f5.jpg" alt="Favorite 5" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Favorite 5</h3>
+                    <p>Portfolio Highlight</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="favorites" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/ec80f00b6218d0acc5deeee276530cc5.jpg">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/ec80f00b6218d0acc5deeee276530cc5.jpg" alt="Favorite 6" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Favorite 6</h3>
+                    <p>Portfolio Highlight</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="favorites" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/16b5d91caca9698bb8fbc4d20ab19180.jpg">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/16b5d91caca9698bb8fbc4d20ab19180.jpg" alt="Favorite 7" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Favorite 7</h3>
+                    <p>Portfolio Highlight</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="favorites" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/2329b27eec01befc8bb2392c5da33b6d.jpg">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/2329b27eec01befc8bb2392c5da33b6d.jpg" alt="Favorite 8" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Favorite 8</h3>
+                    <p>Portfolio Highlight</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="favorites" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/3227483e8d2ccf54e6b16219ab527c7f.jpg">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/3227483e8d2ccf54e6b16219ab527c7f.jpg" alt="Favorite 9" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Favorite 9</h3>
+                    <p>Portfolio Highlight</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="favorites" data-image="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/31a7c94e868093cda24a5002cf0ace3f.jpg">
+                <img src="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website/_assets/media/31a7c94e868093cda24a5002cf0ace3f.jpg" alt="Favorite 10" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Favorite 10</h3>
+                    <p>Portfolio Highlight</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-container">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <button class="lightbox-prev" id="lightboxPrev">&#10094;</button>
+            <img id="lightboxImage" src="" alt="Portfolio Item" class="lightbox-image">
+            <button class="lightbox-next" id="lightboxNext">&#10095;</button>
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <h2><span class="white">Like What You</span> <span class="red">See?</span></h2>
+        <p>Let's create something amazing together.</p>
+        <a href="index.html#contact" class="cta-btn">Book Now</a>
+    </section>
+
+    <footer>
+        <div class="footer-logo">
+            <span class="white">Quinton Stocton</span>
+            <span class="red">Photography</span>
+        </div>
+        <p style="color: #E5E0E0; margin-bottom: 1rem;">Capturing Moments, Crafting Memories; Preserving The Essence Of You.</p>
+        
+        <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="index.html#collections">Collections</a>
+            <a href="index.html#services">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="index.html#reviews">Reviews</a>
+            <a href="affiliate.html">Affiliate Links</a>
+            <a href="social.html">Social</a>
+        </nav>
+
+        <div class="social-icons" id="social">
+            <a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a>
+            <a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a>
+        </div>
+
+        <div class="footer-info">
+            <p>Based in Glasgow, Kentucky</p>
+            <p>© 2025 Quinton Stocton Photography. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const allPortfolioItems = document.querySelectorAll('.portfolio-item');
+        const portfolioGrids = document.querySelectorAll('.portfolio-grid');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                portfolioGrids.forEach(grid => {
+                    const items = grid.querySelectorAll('.portfolio-item');
+                    let visibleCount = 0;
+                    
+                    items.forEach(item => {
+                        const itemCategory = item.getAttribute('data-category');
+                        if (filter === 'all' || itemCategory === filter) {
+                            item.style.display = 'block';
+                            visibleCount++;
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+
+                    // Hide section header if no items are visible
+                    const section = grid.closest('.portfolio-section');
+                    if (section) {
+                        if (visibleCount === 0) {
+                            section.style.display = 'none';
+                        } else {
+                            section.style.display = 'block';
+                        }
+                    }
+                });
+            });
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxTitle = document.getElementById('lightboxTitle');
+        const lightboxDescription = document.getElementById('lightboxDescription');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+        
+        let currentImageIndex = 0;
+        let visibleImages = [];
+
+        function updateVisibleImages() {
+            visibleImages = Array.from(allPortfolioItems).filter(item => {
+                return item.style.display !== 'none';
+            });
+        }
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const item = visibleImages[index];
+            const imageUrl = item.getAttribute('data-image');
+            const title = item.querySelector('.portfolio-overlay h3').textContent;
+            const description = item.querySelector('.portfolio-overlay p').textContent;
+
+            lightboxImage.src = imageUrl;
+            lightboxTitle.textContent = title;
+            lightboxDescription.textContent = description;
+            lightbox.classList.add('active');
+
+            updateNavigationButtons();
+        }
+
+        function updateNavigationButtons() {
+            lightboxPrev.disabled = currentImageIndex === 0;
+            lightboxNext.disabled = currentImageIndex === visibleImages.length - 1;
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+        }
+
+        function nextImage() {
+            if (currentImageIndex < visibleImages.length - 1) {
+                openLightbox(currentImageIndex + 1);
+            }
+        }
+
+        function prevImage() {
+            if (currentImageIndex > 0) {
+                openLightbox(currentImageIndex - 1);
+            }
+        }
+
+        // Add click listeners to portfolio items
+        allPortfolioItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                updateVisibleImages();
+                const visibleIndex = visibleImages.indexOf(item);
+                openLightbox(visibleIndex);
+            });
+        });
+
+        // Lightbox controls
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', prevImage);
+        lightboxNext.addEventListener('click', nextImage);
+
+        // Close on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') prevImage();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'Escape') closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

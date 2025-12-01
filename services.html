@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Quinton Stocton Photography</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-services {
+            margin-top: 80px;
+            padding: 5rem 1rem 3rem;
+            text-align: center;
+            background: radial-gradient(ellipse at center, #BA0606 0%, #000000 70%);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-services h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .hero-services h1 .red {
+            color: #BA0606;
+        }
+
+        .hero-services p {
+            font-size: 1.2rem;
+            color: #E5E0E0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #1a1a1a;
+            border: 2px solid #BA0606;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 30px rgba(186, 6, 6, 0.3);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 40px rgba(186, 6, 6, 0.5);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 280px;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #BA0606;
+            font-size: 3.5rem;
+            overflow: hidden;
+        }
+
+        .service-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            min-height: 3rem;
+        }
+
+        .service-card p {
+            color: #E5E0E0;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .service-pricing {
+            margin-bottom: 1.5rem;
+        }
+
+        .service-price {
+            color: #BA0606;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .service-original-price {
+            color: #999;
+            font-size: 1rem;
+            text-decoration: line-through;
+            margin-left: 0.5rem;
+        }
+
+        .service-link {
+            display: inline-block;
+            background: #BA0606;
+            color: #fff;
+            padding: 1rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .service-link:hover {
+            background: #8B0000;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+                padding: 3rem 1rem;
+            }
+
+            .hero-services h1 {
+                font-size: 2.2rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .service-price {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Drawer Navigation -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <nav class="drawer-nav" id="drawerNav">
+        <div class="drawer-header">
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+            <button class="drawer-close" id="drawerClose">&times;</button>
+        </div>
+        <ul class="drawer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="mission.html">Our Mission</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="affiliate.html">Affiliate Links</a></li>
+            <li><a href="social.html">Social</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="social-icons drawer-social-icons"><a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a><a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a><a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a><a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a><a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a></div>
+    </nav>
+
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-left">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="mission.html">Our Mission</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="affiliate.html">Affiliate Links</a></li>
+            <li><a href="social.html">Social</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-services">
+        <h1><span class="white">Professional</span> <span class="red">Services</span></h1>
+        <p>Professional photography, branding, and digital design services tailored to your unique story.</p>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-grid">
+        <div class="service-card">
+            <div class="service-image"><i class="fas fa-ring"></i></div>
+            <div class="service-content">
+                <h3>Wedding Photography</h3>
+                <p>Full-day coverage capturing your entire wedding story. Includes 300+ edited photos, sneak peek gallery, and highlight slideshow.</p>
+                <div class="service-pricing">
+                    <span class="service-price">$1,750</span>
+                    <span class="service-original-price">$225/hr</span>
+                </div>
+                <a href="https://quintonstoctonphotography.com/products/wedding-photography" target="_blank" class="service-link">View Details</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image"><i class="fas fa-camera"></i></div>
+            <div class="service-content">
+                <h3>Lifestyle/Portrait Photography</h3>
+                <p>Capturing individuals, families, and headshots for professional or personal use. 1-2 hours coverage with 20+ edited images.</p>
+                <div class="service-pricing">
+                    <span class="service-price">$250</span>
+                    <span class="service-original-price">$125/hr</span>
+                </div>
+                <a href="https://quintonstoctonphotography.com/products/portrait-lifestyle-photography" target="_blank" class="service-link">View Details</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image"><i class="fas fa-calendar-days"></i></div>
+            <div class="service-content">
+                <h3>Event Photography</h3>
+                <p>Professional coverage for prom, graduation, birthdays, corporate events, and special occasions. 1-2 hours with 20+ edited images.</p>
+                <div class="service-pricing">
+                    <span class="service-price">$250</span>
+                    <span class="service-original-price">$125/hr</span>
+                </div>
+                <a href="https://quintonstoctonphotography.com/products/event-photography" target="_blank" class="service-link">View Details</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image"><i class="fas fa-heart"></i></div>
+            <div class="service-content">
+                <h3>Boudoir Photography</h3>
+                <p>Empowering and tasteful sessions in studio or on-location. Includes professional posing guidance and 20+ edited images.</p>
+                <div class="service-pricing">
+                    <span class="service-price">$325</span>
+                    <span class="service-original-price">$150/hr</span>
+                </div>
+                <a href="https://quintonstoctonphotography.com/products/boudoir-photography" target="_blank" class="service-link">View Details</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image"><i class="fas fa-paw"></i></div>
+            <div class="service-content">
+                <h3>Pet Photography</h3>
+                <p>Candid or posed shots of your furry, scaly, or feathered friends. Personality-driven and fun! 1-2 hours with 20+ edited images.</p>
+                <div class="service-pricing">
+                    <span class="service-price">$225</span>
+                    <span class="service-original-price">$125/hr</span>
+                </div>
+                <a href="https://quintonstoctonphotography.com/products/pet-photography" target="_blank" class="service-link">View Details</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image"><i class="fas fa-wand-magic-sparkles"></i></div>
+            <div class="service-content">
+                <h3>Photo Editing & Restoration</h3>
+                <p>Retouching, color correction, and restoration for existing images. Includes consultation, concepts, and revision rounds.</p>
+                <div class="service-pricing">
+                    <span class="service-price">$50</span>
+                    <span class="service-original-price">/hr</span>
+                </div>
+                <a href="https://quintonstoctonphotography.com/products/photo-editing-restoration" target="_blank" class="service-link">View Details</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image"><i class="fas fa-baby"></i></div>
+            <div class="service-content">
+                <h3>Newborn Photography</h3>
+                <p>Small studio setup with lighting in your home. 2-4 hours coverage with beautiful lifestyle or studio-style images.</p>
+                <div class="service-pricing">
+                    <span class="service-price">$300</span>
+                    <span class="service-original-price">$125/hr</span>
+                </div>
+                <a href="https://quintonstoctonphotography.com/products/newborn-photography" target="_blank" class="service-link">View Details</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image"><i class="fas fa-briefcase"></i></div>
+            <div class="service-content">
+                <h3>Commercial Photography</h3>
+                <p>Products, fashion, sports, architecture, food, vehicle, and more. Clean, crisp shots for any commercial need.</p>
+                <div class="service-pricing">
+                    <span class="service-price">$175+</span>
+                    <span class="service-original-price">$100/hr</span>
+                </div>
+                <a href="https://quintonstoctonphotography.com/products/commercial-photography" target="_blank" class="service-link">View Details</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image"><i class="fas fa-palette"></i></div>
+            <div class="service-content">
+                <h3>Logo Design & Branding</h3>
+                <p>Custom high-impact logo and brand identity design. Includes consultation, design concepts, and high-res files for web & print.</p>
+                <div class="service-pricing">
+                    <span class="service-price">Custom</span>
+                    <span class="service-original-price">Quote</span>
+                </div>
+                <a href="https://quintonstoctonphotography.com/products/logo-design-branding" target="_blank" class="service-link">View Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <span class="white">Quinton Stocton</span>
+            <span class="red">Photography</span>
+        </div>
+        <p style="color: #E5E0E0; margin-bottom: 1rem;">Capturing Moments, Crafting Memories; Preserving The Essence Of You.</p>
+        
+        <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="index.html#collections">Collections</a>
+            <a href="index.html#services">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="index.html#reviews">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="social-icons" id="social">
+            <a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a>
+            <a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a>
+        </div>
+
+        <div class="footer-info">
+            <p>Based in Glasgow, Kentucky</p>
+            <p>© 2025 Quinton Stocton Photography. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

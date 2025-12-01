@@ -1,0 +1,601 @@
+{% comment %}
+  HOME PAGE TEMPLATE
+  Shopify Liquid template for homepage
+  Compatible with theme settings and CSS variables
+{% endcomment %}
+
+<!-- Hero Section -->
+<section class="hero" data-section-id="{{ section.id }}" data-section-type="hero">
+  <div class="hero__inner">
+    <h1 class="hero__title">
+      Who is Quinton <span class="hero__accent">Stocton?</span>
+    </h1>
+    <p class="hero__subtitle">
+      Based in Glasgow, Kentucky - creating designs that help define you and taking photographs that help refine you.
+    </p>
+    <div class="hero__cta">
+      <a href="#collections" class="button button--primary" role="button">
+        Shop Collections
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- About Mini Section -->
+<section class="about-mini" data-section-id="{{ section.id }}" data-section-type="about-mini">
+  <div class="about-mini__content">
+    <h2 class="about-mini__heading">
+      <span class="about-mini__text--primary">Designs that Refine You.</span><br>
+      <span class="about-mini__text--accent">Photography that Define You.</span>
+    </h2>
+    <p class="about-mini__description">
+      I'm a full-stack creative based in Kentucky, blending photography, branding, and digital design to help people and businesses tell their stories. From personal portraits to complete brand identities, my work captures the emotion behind every moment and the vision behind every brand.
+    </p>
+    <p class="about-mini__description">
+      Whether you're looking to preserve a memory or build a visual identity that stands out, I'm here to turn your vision into something unforgettable.
+    </p>
+    <a href="/pages/about" class="button button--primary">Learn More About Me</a>
+  </div>
+</section>
+
+<!-- Mission Mini Section -->
+<section class="mission-mini" data-section-id="{{ section.id }}" data-section-type="mission-mini">
+  <div class="mission-mini__content">
+    <h2 class="mission-mini__title">
+      <span class="mission-mini__text--primary">OUR</span> <span class="mission-mini__text--accent">MISSION</span>
+    </h2>
+    <p class="mission-mini__subtitle">Helping people and brands stand out since 2017 through visual storytelling.</p>
+    
+    <div class="mission-mini__box">
+      <h3 class="mission-mini__box-title">
+        My brand stands on one simple truth: all it takes is one photo or one good design and it can literally change the way you feel about life.
+      </h3>
+      <ul class="mission-mini__list">
+        <li>Capturing genuine emotion that tells your story.</li>
+        <li>Delivering luxury quality results with small-town care.</li>
+        <li>Building a platform that inspires, uplifts, and connects.</li>
+      </ul>
+    </div>
+    
+    <p class="mission-mini__quote">
+      I believe in helping people feel seen, valued, and proud of their moments. Every shoot, every edit, every click is done with the intention to preserve your legacy and ignite your confidence. A portion of my support also goes toward local charities, because success means more when it's shared.
+    </p>
+    
+    <a href="/pages/our-mission" class="button button--primary">Read Our Full Mission</a>
+  </div>
+</section>
+
+<!-- Featured Merchandise Section -->
+<section id="merchandise" class="featured-section featured-section--merchandise" data-section-id="{{ section.id }}" data-section-type="merchandise-carousel">
+  <div class="featured-section__inner">
+    <h2 class="featured-section__title">
+      <span class="featured-section__text--accent">Featured</span> 
+      <span class="featured-section__text--primary">Merchandise</span>
+    </h2>
+    <p class="featured-section__subtitle">Top Selling Quinton Stocton Photography Merchandise</p>
+    
+    <div class="carousel-wrapper">
+      <div class="carousel-track" id="merchTrack" role="region" aria-label="Featured Merchandise Carousel">
+        <div class="carousel-item" role="group" aria-label="Item 1 of 4">
+          <div class="carousel-item__image">
+            <i class="fas fa-shirt" aria-hidden="true"></i>
+          </div>
+          <h3 class="carousel-item__title">Created to Create Sweatshirt</h3>
+          <p class="carousel-item__price">$39.99</p>
+          <a href="https://quintonstoctonphotography.com/products/created-to-create-sweatshirt-by-quinton-stocton-photography-dtflex-graphic-pullover" target="_blank" rel="noopener" class="button button--primary">Choose Options</a>
+        </div>
+
+        <div class="carousel-item" role="group" aria-label="Item 2 of 4">
+          <div class="carousel-item__image">
+            <i class="fas fa-bag-shopping" aria-hidden="true"></i>
+          </div>
+          <h3 class="carousel-item__title">Shoulder Bag - Digital Artist Elite</h3>
+          <p class="carousel-item__price">$29.99</p>
+          <a href="https://quintonstoctonphotography.com/products/shoulder-bag-black-and-gold-minimalist-design-by-quinton-stocton-photography-s-digital-artist-elite-limited-designs" target="_blank" rel="noopener" class="button button--primary">Choose Options</a>
+        </div>
+
+        <div class="carousel-item" role="group" aria-label="Item 3 of 4">
+          <div class="carousel-item__image">
+            <i class="fas fa-mug-hot" aria-hidden="true"></i>
+          </div>
+          <h3 class="carousel-item__title">Designs that define you Travel Mug</h3>
+          <p class="carousel-item__price">From $24.99</p>
+          <a href="https://quintonstoctonphotography.com/products/designs-that-define-you-travel-mug-with-a-handle-quinton-stocton-photogtaphy" target="_blank" rel="noopener" class="button button--primary">Choose Options</a>
+        </div>
+
+        <div class="carousel-item" role="group" aria-label="Item 4 of 4">
+          <div class="carousel-item__image">
+            <i class="fas fa-hoodies" aria-hidden="true"></i>
+          </div>
+          <h3 class="carousel-item__title">Cardinal Crown Logo Hoodie</h3>
+          <p class="carousel-item__price">$44.99</p>
+          <a href="https://quintonstoctonphotography.com/products/quinton-stocton-photography-cardinal-crown-logo-22-hoodie-dtflex-graphic-pullover" target="_blank" rel="noopener" class="button button--primary">Choose Options</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-nav" role="toolbar" aria-label="Carousel Controls">
+      <button class="carousel-nav__button carousel-nav__button--prev" id="merchPrev" aria-label="Previous" aria-controls="merchTrack">
+        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <span class="carousel-nav__counter" id="merchCounter" aria-live="polite">1/4</span>
+      <button class="carousel-nav__button carousel-nav__button--next" id="merchNext" aria-label="Next" aria-controls="merchTrack">
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="carousel-footer">
+      <a href="/collections/merchandise" class="button button--secondary">View All Merchandise</a>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Services Section -->
+<section id="services" class="featured-section featured-section--services" data-section-id="{{ section.id }}" data-section-type="services-carousel">
+  <div class="featured-section__inner">
+    <h2 class="featured-section__title">
+      <span class="featured-section__text--accent">Featured</span> 
+      <span class="featured-section__text--primary">Services</span>
+    </h2>
+    <p class="featured-section__subtitle">Our Top Selling Service Packages</p>
+    
+    <div class="carousel-wrapper">
+      <div class="carousel-track" id="serviceTrack" role="region" aria-label="Featured Services Carousel">
+        <div class="carousel-item" role="group" aria-label="Service 1 of 5">
+          <div class="carousel-item__image">
+            <i class="fas fa-ring" aria-hidden="true"></i>
+          </div>
+          <h3 class="carousel-item__title">Wedding Photography</h3>
+          <p class="carousel-item__price">$1,250.00</p>
+          <p class="carousel-item__original-price">Was $1,750.00</p>
+          <a href="https://quintonstoctonphotography.com/products/wedding-photography" target="_blank" rel="noopener" class="button button--primary">Add to Cart</a>
+        </div>
+
+        <div class="carousel-item" role="group" aria-label="Service 2 of 5">
+          <div class="carousel-item__image">
+            <i class="fas fa-palette" aria-hidden="true"></i>
+          </div>
+          <h3 class="carousel-item__title">Branding & Logo Design</h3>
+          <p class="carousel-item__price">$225.00</p>
+          <p class="carousel-item__original-price">Was $300.00</p>
+          <a href="https://quintonstoctonphotography.com/products/branding-logo-design" target="_blank" rel="noopener" class="button button--primary">Add to Cart</a>
+        </div>
+
+        <div class="carousel-item" role="group" aria-label="Service 3 of 5">
+          <div class="carousel-item__image">
+            <i class="fas fa-camera-retro" aria-hidden="true"></i>
+          </div>
+          <h3 class="carousel-item__title">Portrait & Lifestyle</h3>
+          <p class="carousel-item__price">$200.00</p>
+          <p class="carousel-item__original-price">Was $250.00</p>
+          <a href="https://quintonstoctonphotography.com/products/portrait-lifestyle-photography" target="_blank" rel="noopener" class="button button--primary">Add to Cart</a>
+        </div>
+
+        <div class="carousel-item" role="group" aria-label="Service 4 of 5">
+          <div class="carousel-item__image">
+            <i class="fas fa-calendar-days" aria-hidden="true"></i>
+          </div>
+          <h3 class="carousel-item__title">Event Photography</h3>
+          <p class="carousel-item__price">$250.00</p>
+          <p class="carousel-item__original-price">Was $325.00</p>
+          <a href="https://quintonstoctonphotography.com/products/event-photography" target="_blank" rel="noopener" class="button button--primary">Add to Cart</a>
+        </div>
+
+        <div class="carousel-item" role="group" aria-label="Service 5 of 5">
+          <div class="carousel-item__image">
+            <i class="fas fa-heart" aria-hidden="true"></i>
+          </div>
+          <h3 class="carousel-item__title">Boudoir Photography</h3>
+          <p class="carousel-item__price">$250.00</p>
+          <p class="carousel-item__original-price">Was $325.00</p>
+          <a href="https://quintonstoctonphotography.com/products/boudoir-photography" target="_blank" rel="noopener" class="button button--primary">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-nav" role="toolbar" aria-label="Carousel Controls">
+      <button class="carousel-nav__button carousel-nav__button--prev" id="servicePrev" aria-label="Previous" aria-controls="serviceTrack">
+        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <span class="carousel-nav__counter" id="serviceCounter" aria-live="polite">1/5</span>
+      <button class="carousel-nav__button carousel-nav__button--next" id="serviceNext" aria-label="Next" aria-controls="serviceTrack">
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="carousel-footer">
+      <a href="/pages/services" class="button button--secondary">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section" data-section-id="{{ section.id }}" data-section-type="cta">
+  <div class="cta-section__inner">
+    <h2 class="cta-section__title">
+      <span class="cta-section__text--primary">Ready to</span> 
+      <span class="cta-section__text--accent">Create?</span>
+    </h2>
+    <p class="cta-section__description">Let's work together to bring your vision to life</p>
+    <a href="/pages/contact" class="button button--primary button--large">Get In Touch</a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    margin-top: 80px;
+    padding: 5rem 2rem 3rem;
+    text-align: center;
+    background: radial-gradient(ellipse at center, var(--color-base-primary) 0%, var(--color-base-background) 70%);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero__inner {
+    max-width: 900px;
+  }
+
+  .hero__title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .hero__accent {
+    color: var(--color-base-primary);
+  }
+
+  .hero__subtitle {
+    font-size: 1.2rem;
+    color: #E5E0E0;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+  }
+
+  .hero__cta {
+    margin-top: 2rem;
+  }
+
+  .about-mini, .mission-mini {
+    padding: 5rem 2rem;
+    background: #000;
+    text-align: center;
+  }
+
+  .about-mini__content, .mission-mini__content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .about-mini__heading, .mission-mini__title {
+    font-size: 2.25rem;
+    margin-bottom: 2rem;
+    color: #fff;
+  }
+
+  .about-mini__text--accent, .mission-mini__text--accent {
+    color: var(--color-base-primary);
+  }
+
+  .about-mini__description, .mission-mini__box-title {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #E5E0E0;
+    margin-bottom: 1.5rem;
+  }
+
+  .mission-mini__list {
+    list-style: none;
+    text-align: left;
+    max-width: 600px;
+    margin: 1.5rem auto;
+  }
+
+  .mission-mini__list li {
+    margin-bottom: 0.75rem;
+    color: #E5E0E0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .mission-mini__list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-base-primary);
+    font-weight: 700;
+  }
+
+  .mission-mini__quote {
+    font-style: italic;
+    margin: 2rem auto;
+    color: #E5E0E0;
+    line-height: 1.7;
+    opacity: 0.9;
+  }
+
+  .featured-section {
+    padding: 4rem 2rem;
+    background: #000;
+  }
+
+  .featured-section__inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .featured-section__title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .featured-section__text--accent {
+    color: var(--color-base-primary);
+  }
+
+  .featured-section__subtitle {
+    text-align: center;
+    color: #E5E0E0;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+  }
+
+  .carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.5s ease;
+  }
+
+  .carousel-item {
+    flex: 0 0 calc(25% - 1.125rem);
+    background: #1a1a1a;
+    border: 2px solid var(--color-base-primary);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .carousel-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(186, 6, 6, 0.3);
+  }
+
+  .carousel-item__image {
+    font-size: 3rem;
+    color: var(--color-base-primary);
+    margin-bottom: 1rem;
+  }
+
+  .carousel-item__title {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .carousel-item__price {
+    font-size: 1.3rem;
+    color: var(--color-base-primary);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .carousel-item__original-price {
+    font-size: 0.9rem;
+    color: #E5E0E0;
+    text-decoration: line-through;
+    margin-bottom: 1rem;
+  }
+
+  .carousel-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .carousel-nav__button {
+    background: transparent;
+    color: var(--color-base-primary);
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel-nav__button:hover:not(:disabled) {
+    color: #8B0000;
+    transform: scale(1.15);
+  }
+
+  .carousel-nav__button:disabled {
+    color: #666;
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .carousel-nav__counter {
+    color: var(--color-base-primary);
+    font-weight: 700;
+    font-size: 1rem;
+    min-width: 50px;
+    text-align: center;
+  }
+
+  .carousel-footer {
+    text-align: center;
+  }
+
+  .cta-section {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: #0a0a0a;
+  }
+
+  .cta-section__inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .cta-section__title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .cta-section__text--accent {
+    color: var(--color-base-primary);
+  }
+
+  .cta-section__description {
+    color: #E5E0E0;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background: var(--color-base-primary);
+    color: #fff;
+    border: 2px solid var(--color-base-primary);
+    border-radius: 5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+
+  .button:hover {
+    background: #8B0000;
+    border-color: #8B0000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(186, 6, 6, 0.4);
+  }
+
+  .button--secondary {
+    background: transparent;
+    color: var(--color-base-primary);
+    border: 2px solid var(--color-base-primary);
+  }
+
+  .button--secondary:hover {
+    background: var(--color-base-primary);
+    color: #fff;
+  }
+
+  .button--large {
+    padding: 1.2rem 3rem;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 1024px) {
+    .carousel-item {
+      flex: 0 0 calc(50% - 0.75rem);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      margin-top: 60px;
+      padding: 3rem 1.5rem;
+      min-height: 300px;
+    }
+
+    .hero__title {
+      font-size: 2rem;
+    }
+
+    .hero__subtitle {
+      font-size: 1rem;
+    }
+
+    .about-mini, .mission-mini, .featured-section, .cta-section {
+      padding: 3rem 1.5rem;
+    }
+
+    .about-mini__heading, .mission-mini__title, .featured-section__title, .cta-section__title {
+      font-size: 1.75rem;
+    }
+
+    .carousel-item {
+      flex: 0 0 calc(100% - 1.5rem);
+    }
+
+    .button {
+      padding: 0.7rem 1.5rem;
+      font-size: 0.85rem;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    'use strict';
+
+    // Carousel function
+    function initCarousel(trackId, prevBtnId, nextBtnId, counterId, itemCount) {
+      const track = document.getElementById(trackId);
+      const prevBtn = document.getElementById(prevBtnId);
+      const nextBtn = document.getElementById(nextBtnId);
+      const counter = document.getElementById(counterId);
+      
+      if (!track || !prevBtn || !nextBtn) return;
+
+      let currentIndex = 0;
+      const itemWidth = track.children[0]?.offsetWidth || 0;
+      const gap = 24; // 1.5rem in pixels
+
+      function updateCarousel() {
+        const offset = -(currentIndex * (itemWidth + gap));
+        track.style.transform = `translateX(${offset}px)`;
+        counter.textContent = `${currentIndex + 1}/${itemCount}`;
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === itemCount - 1;
+      }
+
+      prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateCarousel();
+        }
+      });
+
+      nextBtn.addEventListener('click', () => {
+        if (currentIndex < itemCount - 1) {
+          currentIndex++;
+          updateCarousel();
+        }
+      });
+
+      updateCarousel();
+    }
+
+    // Initialize carousels
+    document.addEventListener('DOMContentLoaded', () => {
+      initCarousel('merchTrack', 'merchPrev', 'merchNext', 'merchCounter', 4);
+      initCarousel('serviceTrack', 'servicePrev', 'serviceNext', 'serviceCounter', 5);
+    });
+  })();
+</script>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Quinton Stocton Photography</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-contact {
+            margin-top: 80px;
+            padding: 5rem 1rem 3rem;
+            text-align: center;
+            background: radial-gradient(ellipse at center, #BA0606 0%, #000000 70%);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-contact h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .hero-contact h1 .red {
+            color: #BA0606;
+        }
+
+        .hero-contact p {
+            font-size: 1.2rem;
+            color: #E5E0E0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            box-sizing: border-box;
+        }
+
+        .contact-info {
+            background: #1a1a1a;
+            padding: 3rem;
+            border-radius: 10px;
+            border: 2px solid #BA0606;
+            box-shadow: 0 0 30px rgba(186, 6, 6, 0.3);
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info h2 .red {
+            color: #BA0606;
+        }
+
+        .info-item {
+            margin-bottom: 2rem;
+        }
+
+        .info-item h3 {
+            font-size: 1.2rem;
+            color: #BA0606;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item p {
+            font-size: 1rem;
+            color: #E5E0E0;
+        }
+
+        .info-item a {
+            color: #E5E0E0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .info-item a:hover {
+            color: #BA0606;
+        }
+
+        .contact-form-wrapper {
+            background: #1a1a1a;
+            padding: 3rem;
+            border-radius: 10px;
+            border: 2px solid #BA0606;
+            box-shadow: 0 0 30px rgba(186, 6, 6, 0.3);
+        }
+
+        .contact-form-wrapper h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form-wrapper h2 .red {
+            color: #BA0606;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            background: #000;
+            border: 2px solid #474747;
+            border-radius: 5px;
+            color: #E5E0E0;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #BA0606;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background: #BA0606;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-sizing: border-box;
+        }
+
+        .btn-submit:hover {
+            background: #8B0000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(186, 6, 6, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-contact h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Drawer Navigation -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <nav class="drawer-nav" id="drawerNav">
+        <div class="drawer-header">
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+            <button class="drawer-close" id="drawerClose">&times;</button>
+        </div>
+        <ul class="drawer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#collections">Collections</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+            <li><a href="affiliate.html">Affiliate Links</a></li>
+            <li><a href="social.html">Social</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="social-icons drawer-social-icons"><a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a><a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a><a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a><a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a><a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a></div>
+    </nav>
+
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-left">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#collections">Collections</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+            <li><a href="affiliate.html">Affiliate Links</a></li>
+            <li><a href="social.html">Social</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-contact">
+        <h1><span class="white">Get in</span> <span class="red">Touch</span></h1>
+        <p>Let's bring your vision to life. Reach out to discuss your project or book a session.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-container">
+        <div class="contact-info">
+            <h2><span class="white">Contact</span> <span class="red">Details</span></h2>
+            
+            <div class="info-item">
+                <h3>Business Name</h3>
+                <p>Quinton Stocton Photography</p>
+            </div>
+
+            <div class="info-item">
+                <h3>Location</h3>
+                <p>Glasgow, KY 42141<br>United States</p>
+            </div>
+
+            <div class="info-item">
+                <h3>Email</h3>
+                <p><a href="mailto:customersupport@quintonstoctonphotography.com">customersupport@quintonstoctonphotography.com</a></p>
+            </div>
+
+            <div class="info-item">
+                <h3>Phone</h3>
+                <p><a href="tel:+12702837950">+1(270) 283-7950</a></p>
+            </div>
+
+            <div class="info-item">
+                <h3>Business Hours</h3>
+                <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                Saturday: 10:00 AM - 4:00 PM<br>
+                Sunday: By Appointment Only</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo" style="text-align: center; font-size: 1.8rem; margin-bottom: 1rem;">
+            <span class="white">Quinton Stocton</span>
+            <span class="red">Photography</span>
+        </div>
+        <p style="text-align: center; color: #E5E0E0; margin-bottom: 1rem;">Capturing Moments, Crafting Memories; Preserving The Essence Of You.</p>
+        
+        <nav class="footer-nav">
+            <div class="footer-nav-column">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="mission.html">Our Mission</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="services.html">Services</a>
+            </div>
+            <div class="footer-nav-column">
+                <a href="reviews.html">Reviews</a>
+                <a href="faq.html">FAQ</a>
+                <a href="affiliate.html">Affiliate Links</a>
+                <a href="social.html">Social</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-nav-column">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="refund.html">Refund Policy</a>
+                <a href="shipping.html">Shipping Policy</a>
+                <a href="cancellation.html">Cancellation Policy</a>
+            </div>
+        </nav>
+
+        <div class="social-icons" id="social">
+            <a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a>
+            <a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a>
+        </div>
+
+        <div class="footer-info">
+            <p>Based in Glasgow, Kentucky</p>
+            <p>© 2025 Quinton Stocton Photography. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

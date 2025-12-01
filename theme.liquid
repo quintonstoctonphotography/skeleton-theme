@@ -1,0 +1,153 @@
+<!doctype html>
+<html class="js" lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="follow, index">
+    <meta name="description" content="{{ page_description | escape }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+
+    {%- liquid
+      assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
+      assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
+      assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
+      assign heading_font_bold = settings.type_heading_font | font_modify: 'weight', 'bold'
+    -%}
+
+    {% style %}
+      {{ settings.type_body_font | font_face: font_display: 'swap' }}
+      {{ body_font_bold | font_face: font_display: 'swap' }}
+      {{ body_font_italic | font_face: font_display: 'swap' }}
+      {{ body_font_bold_italic | font_face: font_display: 'swap' }}
+      {{ settings.type_heading_font | font_face: font_display: 'swap' }}
+      {{ heading_font_bold | font_face: font_display: 'swap' }}
+
+      :root {
+        --color-base-primary: {{ settings.color_primary }};
+        --color-base-secondary: {{ settings.color_secondary }};
+        --color-base-text: {{ settings.color_text }};
+        --color-base-background: {{ settings.color_background }};
+        --color-base-border: {{ settings.color_border }};
+
+        --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+        --font-body-style: {{ settings.type_body_font.style }};
+        --font-body-weight: {{ settings.type_body_font.weight }};
+        --font-heading-family: {{ settings.type_heading_font.family }}, {{ settings.type_heading_font.fallback_families }};
+        --font-heading-style: {{ settings.type_heading_font.style }};
+        --font-heading-weight: {{ settings.type_heading_font.weight }};
+
+        --spacing-unit: {{ settings.spacing_unit }}px;
+      }
+
+      body {
+        background-color: var(--color-base-background);
+        color: var(--color-base-text);
+        font-family: var(--font-body-family);
+        font-style: var(--font-body-style);
+        font-weight: var(--font-body-weight);
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading-family);
+        font-style: var(--font-heading-style);
+        font-weight: var(--font-heading-weight);
+      }
+    {% endstyle %}
+
+    {{ content_for_header }}
+
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+
+    {{ 'theme-styles.css' | asset_url | stylesheet_tag }}
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+
+  <body class="gradient" data-section-id="{{ section.id }}" data-section-type="{{ section.type }}">
+    <a class="skip-to-content-link button visually-hidden" href="#MainContent">Skip to content</a>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <nav class="drawer-nav" id="drawerNav" role="navigation" aria-label="Mobile Menu">
+      <div class="drawer-header">
+        <div class="logo" role="heading" aria-level="2">
+          <span class="white">{{ shop.name | split: ' ' | first }}</span>
+          <span class="red">{{ shop.name | split: ' ' | last }}</span>
+        </div>
+        <button class="drawer-close" id="drawerClose" aria-label="Close Menu">&times;</button>
+      </div>
+      <ul class="drawer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/pages/about">About</a></li>
+        <li><a href="/pages/our-mission">Our Mission</a></li>
+        <li><a href="/collections/all">Portfolio</a></li>
+        <li><a href="/pages/services">Services</a></li>
+        <li><a href="/pages/reviews">Reviews</a></li>
+        <li><a href="/pages/faq">FAQ</a></li>
+        <li><a href="/pages/affiliate-links">Affiliate Links</a></li>
+        <li><a href="/pages/social">Social</a></li>
+        <li><a href="/pages/contact">Contact</a></li>
+      </ul>
+      <div class="social-icons drawer-social-icons" role="list">
+        <a href="https://facebook.com/quintonstoctonphotography" target="_blank" rel="noopener" title="Facebook" role="listitem"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com/quintonstoctonphotography" target="_blank" rel="noopener" title="Instagram" role="listitem"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" rel="noopener" title="TikTok" role="listitem"><i class="fab fa-tiktok"></i></a>
+        <a href="https://x.com/qsphotographyky" target="_blank" rel="noopener" title="X" role="listitem"><i class="fab fa-x"></i></a>
+        <a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" rel="noopener" title="LinkedIn" role="listitem"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://youtube.com/@quintonstoctonphotography" target="_blank" rel="noopener" title="YouTube" role="listitem"><i class="fab fa-youtube"></i></a>
+        <a href="https://pinterest.com/quintonstoctonphotography" target="_blank" rel="noopener" title="Pinterest" role="listitem"><i class="fab fa-pinterest-p"></i></a>
+        <a href="https://linktr.ee/quintonstoctonphotography" target="_blank" rel="noopener" title="Linktree" role="listitem"><i class="fas fa-link"></i></a>
+      </div>
+    </nav>
+
+    <!-- Header Navigation -->
+    <header class="nav-header" role="banner">
+      <div class="nav-left">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <a href="/" class="logo" role="heading" aria-level="1">
+          <span class="white">{{ shop.name | split: ' ' | first }}</span>
+          <span class="red">{{ shop.name | split: ' ' | last }}</span>
+        </a>
+      </div>
+      <nav class="nav-links" role="navigation" aria-label="Main Menu">
+        <ul>
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/pages/about">About</a></li>
+          <li><a href="/pages/our-mission">Our Mission</a></li>
+          <li><a href="/collections/all">Portfolio</a></li>
+          <li><a href="/pages/services">Services</a></li>
+          <li><a href="/pages/reviews">Reviews</a></li>
+          <li><a href="/pages/faq">FAQ</a></li>
+          <li><a href="/pages/affiliate-links">Affiliate Links</a></li>
+          <li><a href="/pages/social">Social</a></li>
+          <li><a href="/pages/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="MainContent" class="content-for-layout" role="main">
+      {{ content_for_layout }}
+    </main>
+
+    {% render 'footer' %}
+
+    <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+  </body>
+</html>

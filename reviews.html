@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reviews | Quinton Stocton Photography</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-reviews {
+            margin-top: 80px;
+            padding: 5rem 2rem 3rem;
+            text-align: center;
+            background: radial-gradient(ellipse at center, #BA0606 0%, #000000 70%);
+        }
+
+        .hero-reviews h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .hero-reviews h1 .red {
+            color: #BA0606;
+        }
+
+        .hero-reviews .subtitle {
+            font-size: 1.2rem;
+            color: #E5E0E0;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-reviews .description {
+            font-size: 0.95rem;
+            color: #E5E0E0;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .reviews-container {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #000;
+        }
+
+        .review-box {
+            background: #1a1a1a;
+            border: 2px solid #BA0606;
+            border-radius: 10px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 0 30px rgba(186, 6, 6, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .review-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 40px rgba(186, 6, 6, 0.6);
+        }
+
+        .review-services {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .service-tag {
+            background: #BA0606;
+            color: #fff;
+            padding: 0.4rem 1rem;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .review-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #E5E0E0;
+            margin: 1.5rem 0;
+        }
+
+        .review-author {
+            color: #BA0606;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        .review-form-section {
+            background: #0a0a0a;
+            padding: 5rem 2rem;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-container h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .form-container h2 .red {
+            color: #BA0606;
+        }
+
+        .form-container > p {
+            text-align: center;
+            color: #E5E0E0;
+            margin-bottom: 3rem;
+        }
+
+        .review-form {
+            background: #1a1a1a;
+            border: 2px solid #BA0606;
+            border-radius: 10px;
+            padding: 3rem;
+            box-shadow: 0 0 30px rgba(186, 6, 6, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: #000;
+            border: 2px solid #474747;
+            border-radius: 5px;
+            color: #E5E0E0;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #BA0606;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .star {
+            font-size: 2.5rem;
+            cursor: pointer;
+            color: transparent;
+            -webkit-text-stroke: 2px #fff;
+            transition: all 0.2s;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #BA0606;
+            -webkit-text-stroke: 2px #BA0606;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background: #BA0606;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .btn-submit:hover {
+            background: #8B0000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(186, 6, 6, 0.4);
+        }
+
+        .trust-stats-reviews {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 3rem auto 0;
+            padding: 0 2rem;
+        }
+
+        .stat-badge {
+            background: rgba(186, 6, 6, 0.1);
+            border: 2px solid #BA0606;
+            border-radius: 8px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
+
+        .stat-badge .number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #BA0606;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-badge .label {
+            color: #E5E0E0;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .review-rating {
+            display: flex;
+            gap: 0.3rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            color: #BA0606;
+        }
+
+        .review-rating i {
+            color: #BA0606;
+        }
+
+        @media (max-width: 768px) {
+            .hero-reviews h1 {
+                font-size: 2.2rem;
+            }
+
+            .review-box {
+                padding: 1.5rem;
+            }
+
+            .review-form {
+                padding: 2rem 1.5rem;
+            }
+
+            .star {
+                font-size: 2rem;
+            }
+
+            .trust-stats-reviews {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+
+            .stat-badge .number {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Drawer Navigation -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <nav class="drawer-nav" id="drawerNav">
+        <div class="drawer-header">
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+            <button class="drawer-close" id="drawerClose">&times;</button>
+        </div>
+        <ul class="drawer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="mission.html">Our Mission</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="affiliate.html">Affiliate Links</a></li>
+            <li><a href="social.html">Social</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="social-icons drawer-social-icons">
+            <a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a>
+            <a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a>
+        </div>
+    </nav>
+
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-left">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="mission.html">Our Mission</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="reviews.html" class="active">Reviews</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="affiliate.html">Affiliate Links</a></li>
+            <li><a href="social.html">Social</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-reviews">
+        <h1><span class="white">Behind Every Image</span> <span class="red">Is a Story Worth Telling.</span></h1>
+        <p class="subtitle">EVERY PROJECT BEGINS WITH TRUST AND ENDS WITH TRANSFORMATION.</p>
+        <p class="description">THESE ARE THE VOICES OF PEOPLE AND BRANDS WHO LET ME TURN THEIR VISION INTO SOMETHING THEY COULD FEEL.</p>
+        
+        <div class="trust-stats-reviews">
+            <div class="stat-badge">
+                <span class="number">500+</span>
+                <span class="label">Happy Clients</span>
+            </div>
+            <div class="stat-badge">
+                <span class="number">4.9★</span>
+                <span class="label">Average Rating</span>
+            </div>
+            <div class="stat-badge">
+                <span class="number">8+</span>
+                <span class="label">Years Active</span>
+            </div>
+            <div class="stat-badge">
+                <span class="number">100%</span>
+                <span class="label">Satisfaction Rate</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Container -->
+    <section class="reviews-container">
+        <!-- Review 1 -->
+        <div class="review-box">
+            <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="review-services">
+                <span class="service-tag">Wedding</span>
+                <span class="service-tag">Videography</span>
+                <span class="service-tag">Photography</span>
+            </div>
+            <p class="review-text">"I've looked through our wedding photos at least a hundred times, and I still get emotional. Quinton captured not just the big moments, but all the in-between ones; the laughter, the nervous smiles, the little details that made the day ours. Every image tells part of our story. He's not just a photographer; he's a storyteller. He even captured videos which weren't a part of the package we hired him for, he just didn't want us to miss the big moments."</p>
+            <p class="review-author">— Tisha & Shane M., Wedding Clients</p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-box">
+            <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="review-services">
+                <span class="service-tag">Boudoir</span>
+                <span class="service-tag">Photography</span>
+            </div>
+            <p class="review-text">"I was nervous going into my boudoir session, but Quinton made me feel completely comfortable from start to finish. His professionalism and creative direction turned what I expected to be intimidating into something empowering. The photos came out stunning, elegant, tasteful, and full of confidence. It was more than a shoot; it was a reminder of my own strength and beauty. Thanks again."</p>
+            <p class="review-author">— Alyssa M., Boudoir Client</p>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-box">
+            <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="review-services">
+                <span class="service-tag">Brand Design</span>
+                <span class="service-tag">Photography</span>
+                <span class="service-tag">Content Creation</span>
+            </div>
+            <p class="review-text">"Working with Quinton was a turning point for our brand visuals. He didn't just shoot content; he helped us define our visual identity. Every photo and video element he touched carried our personality and message. From product shots to creative direction, he elevated the entire brand aesthetic. Quinton's work helped us stand out across all platforms, and the response from our audience proved it."</p>
+            <p class="review-author">— Christian C., Founder of CleanCut Kiddo & CutCraft Collective</p>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="review-box">
+            <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="review-services">
+                <span class="service-tag">Portrait</span>
+                <span class="service-tag">Photography</span>
+            </div>
+            <p class="review-text">"Quinton captured my professional headshots perfectly. He understood exactly what I was looking for and delivered images that represent me authentically. The entire session was smooth and professional. I've received so many compliments on these photos. Highly recommended!"</p>
+            <p class="review-author">— Marcus T., Corporate Professional</p>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="review-box">
+            <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="review-services">
+                <span class="service-tag">Event Coverage</span>
+                <span class="service-tag">Photography</span>
+                <span class="service-tag">Videography</span>
+            </div>
+            <p class="review-text">"Quinton's team captured our corporate event beautifully. From the keynote moments to the candid networking shots, every image tells our event's story. The turnaround on the final files was quick, and the quality exceeded our expectations. We'll definitely be hiring him again for our next event."</p>
+            <p class="review-author">— Jennifer L., Event Coordinator</p>
+        </div>
+
+        <!-- Review 6 -->
+        <div class="review-box">
+            <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="review-services">
+                <span class="service-tag">Creator Collaboration</span>
+                <span class="service-tag">Photography</span>
+            </div>
+            <p class="review-text">"Quinton takes phenomenal photos! He's super creative and takes his time with you!"</p>
+            <p class="review-author">— Tatum F., Creator Collaboration</p>
+        </div>
+
+        <!-- Review 7 -->
+        <div class="review-box">
+            <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="review-services">
+                <span class="service-tag">Headshots</span>
+                <span class="service-tag">Personal Branding</span>
+                <span class="service-tag">Photography</span>
+            </div>
+            <p class="review-text">"I needed new headshots for my business profile and LinkedIn, and Quinton made the whole process effortless. He knew how to bring out confidence without making the photos feel stiff or posed. The results looked professional but still felt like me. Within days of updating my profile, I got multiple compliments and even landed a new client. Worth every penny."</p>
+            <p class="review-author">— James L., Entrepreneur & Consultant</p>
+        </div>
+
+        <!-- Review 8 -->
+        <div class="review-box">
+            <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="review-services">
+                <span class="service-tag">Artistic Collaboration</span>
+                <span class="service-tag">Photography</span>
+                <span class="service-tag">Creative Direction</span>
+            </div>
+            <p class="review-text">"I booked Quinton for a themed shoot that mixed street style with cinematic vibes, and he absolutely nailed it. Every shot looked like a frame from a movie. He has an insane eye for color and emotion. Even the raw previews looked professional. I've worked with photographers before, but none who made me feel this seen. I can't recommend him enough for anyone wanting to create something different."</p>
+            <p class="review-author">— Maya T., Artistic Collaboration Client</p>
+        </div>
+
+        <!-- Review 9 -->
+        <div class="review-box">
+            <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="review-services">
+                <span class="service-tag">Personal Branding</span>
+                <span class="service-tag">Photography</span>
+                <span class="service-tag">Marketing</span>
+            </div>
+            <p class="review-text">"Quinton transformed what could've been a simple headshot session into a full branding experience. He helped with wardrobe suggestions, lighting concepts, and even coached me through expressions that matched my brand message. The finished photos were so polished I ended up using them across all my marketing materials."</p>
+            <p class="review-author">— Tiffany W., Marketing Director</p>
+        </div>
+
+        <!-- Review 10 -->
+        <div class="review-box">
+            <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="review-services">
+                <span class="service-tag">Brand Rebranding</span>
+                <span class="service-tag">Logo Design</span>
+                <span class="service-tag">Visual Identity</span>
+            </div>
+            <p class="review-text">"Quinton helped me bring my entire vision to life. My channel 'Kate's Korner' needed a complete visual rebrand; something bold, fantasy-driven, and a little edgy. He took time to understand the style, color palette, and energy I wanted, then built branding that felt cinematic and totally unique. From logo design to cover visuals, it all just clicked. My engagement and following both grew noticeably afterward."</p>
+            <p class="review-author">— Kate W., Digital Creator & AI Fantasy Artist</p>
+        </div>
+
+        <!-- Review 11 -->
+        <div class="review-box">
+            <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="review-services">
+                <span class="service-tag">Brand Design</span>
+                <span class="service-tag">Logo Design</span>
+                <span class="service-tag">Rebranding</span>
+            </div>
+            <p class="review-text">"A design forged from creativity, collaboration, and craft; where every frame, cut, and concept carries purpose. I want to shoutout Quinton Stocton Photography because he has now launched 2 brands for me and then also rebranded those same 2 brands as far as logo/typography and color palette goes to give them a 3D look. I'm not sure how he even does it, but if you need branding or designing for your business or for personal use, he is who you should go to. The new CutCraft emblem represents our story: two C's merging into one cinematic vision. A mark built for creators who carve meaning from the chaos. I asked him if he could recreate the Pokémon font as well and somehow he did it. The man is a magician with it."</p>
+            <p class="review-author">— CutCraft Collective, Brand Design & Rebranding</p>
+        </div>
+
+        <!-- Review 12 -->
+        <div class="review-box">
+            <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="review-services">
+                <span class="service-tag">Family Portraits</span>
+                <span class="service-tag">Photography</span>
+            </div>
+            <p class="review-text">"The best photographer I know, with prices that are more than fair. He'll bring any idea to life."</p>
+            <p class="review-author">— Jasmine N., Personal Family Portraits</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <span class="white">Quinton Stocton</span>
+            <span class="red">Photography</span>
+        </div>
+        <p style="color: #E5E0E0; margin-bottom: 1rem;">Capturing Moments, Crafting Memories; Preserving The Essence Of You.</p>
+        
+        <nav class="footer-nav">
+            <div class="footer-nav-column">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="mission.html">Our Mission</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="services.html">Services</a>
+            </div>
+            <div class="footer-nav-column">
+                <a href="reviews.html">Reviews</a>
+                <a href="faq.html">FAQ</a>
+                <a href="affiliate.html">Affiliate Links</a>
+                <a href="social.html">Social</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-nav-column">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="refund.html">Refund Policy</a>
+                <a href="shipping.html">Shipping Policy</a>
+                <a href="cancellation.html">Cancellation Policy</a>
+            </div>
+        </nav>
+
+        <div class="social-icons" id="social">
+            <a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a>
+            <a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a>
+        </div>
+
+        <div class="footer-info">
+            <p>Based in Glasgow, Kentucky</p>
+            <p>© 2025 Quinton Stocton Photography. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FAQ | Quinton Stocton Photography</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-faq {
+            margin-top: 80px;
+            padding: 5rem 2rem 3rem;
+            text-align: center;
+            background: radial-gradient(ellipse at center, #BA0606 0%, #000000 70%);
+        }
+
+        .hero-faq h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .hero-faq h1 .red {
+            color: #BA0606;
+        }
+
+        .hero-faq p {
+            font-size: 1.1rem;
+            color: #E5E0E0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-container {
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #000;
+        }
+
+        .faq-section {
+            margin-bottom: 4rem;
+        }
+
+        .faq-section-title {
+            font-size: 1.8rem;
+            color: #BA0606;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #BA0606;
+            font-weight: 700;
+        }
+
+        .faq-item {
+            background: #1a1a1a;
+            border: 1px solid #474747;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: #BA0606;
+            box-shadow: 0 0 15px rgba(186, 6, 6, 0.2);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            cursor: pointer;
+            background: #1a1a1a;
+            border: none;
+            width: 100%;
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #242424;
+            color: #BA0606;
+        }
+
+        .faq-question i {
+            color: #BA0606;
+            transition: transform 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #0a0a0a;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+        }
+
+        .faq-answer-content {
+            padding: 1.5rem;
+            color: #E5E0E0;
+            line-height: 1.8;
+        }
+
+        .faq-answer p {
+            margin: 0.5rem 0;
+        }
+
+        .faq-answer a {
+            color: #BA0606;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid #BA0606;
+            transition: all 0.3s;
+        }
+
+        .faq-answer a:hover {
+            background-color: rgba(186, 6, 6, 0.1);
+            padding: 0.2rem 0.4rem;
+        }
+
+        .policy-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background: #BA0606;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .policy-link:hover {
+            background: #8B0000;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-faq h1 {
+                font-size: 2.2rem;
+            }
+
+            .faq-section-title {
+                font-size: 1.4rem;
+            }
+
+            .faq-question {
+                font-size: 0.95rem;
+                padding: 1.2rem;
+            }
+
+            .faq-container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Drawer Navigation -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <nav class="drawer-nav" id="drawerNav">
+        <div class="drawer-header">
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+            <button class="drawer-close" id="drawerClose">&times;</button>
+        </div>
+        <ul class="drawer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="mission.html">Our Mission</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="affiliate.html">Affiliate Links</a></li>
+            <li><a href="social.html">Social</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="social-icons drawer-social-icons">
+            <a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a>
+            <a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a>
+        </div>
+    </nav>
+
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-left">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="mission.html">Our Mission</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="faq.html" class="active">FAQ</a></li>
+            <li><a href="affiliate.html">Affiliate Links</a></li>
+            <li><a href="social.html">Social</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-faq">
+        <h1><span class="white">Frequently Asked</span> <span class="red">Questions</span></h1>
+        <p>Find answers to common questions about our photography, editing, design, and digital services.</p>
+    </section>
+
+    <!-- FAQ Container -->
+    <section class="faq-container">
+        <!-- Photography FAQ -->
+        <div class="faq-section">
+            <h2 class="faq-section-title">Photography Services</h2>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What types of photography do you offer?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>I provide wedding, portrait, lifestyle, and creative storytelling photography in Kentucky. My focus is clear direction, natural posing, and images that feel true to the moment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do you shoot indoors or outdoors?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Both. I design sessions that fit your style and location needs including homes, studios, city spots, and rural spaces.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can I use old inspiration photos for my session?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Yes. You can share ideas and reference images. I use them to guide the energy and aesthetic while still keeping the results original to you.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do you require a deposit?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>For information about deposits and payment terms, please review our policies:</p>
+                        <a href="cancellation.html" class="policy-link">View Cancellation Policy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How long is the turnaround time?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Most sessions are delivered within two to three weeks. Weddings are delivered within four to six weeks.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How many photos do I receive?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>You will receive a full curated gallery. I do not limit based on a strict number. You receive every image that meets my quality standard.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do you travel?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Local travel in Kentucky is included for most bookings. Extended travel can be added by request.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Editing & Retouching FAQ -->
+        <div class="faq-section">
+            <h2 class="faq-section-title">Editing & Retouching</h2>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What editing services do you offer?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>I offer professional retouching, digital color enhancement, image restoration, object removal, cleanup, and full creative color grading.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can you edit photos taken on a phone?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Yes. Phone images can be enhanced with the same color and retouching process used for professional photos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do you edit other photographers' images?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Yes. Many clients hire me exclusively for editing. You keep your style and authorship while I handle the polish.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What is your turnaround time for editing?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>General edits return within two to four days. Large batches or commercial level edits may take longer.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do you offer bulk editing?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Yes. I provide discounted batch editing for photographers, brands, and influencers who need consistent color and fast turnaround.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do you keep my images private?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Absolutely. Client images are never shared or used without permission. For more details on privacy, please review our policy:</p>
+                        <a href="privacy.html" class="policy-link">View Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Design FAQ -->
+        <div class="faq-section">
+            <h2 class="faq-section-title">Design Services</h2>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What design services do you provide?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Brand kits, social media graphics, product artwork, promotional materials, and custom visual layouts for digital creators and small businesses.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can you match my brand style?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Yes. You can send your colors, fonts, mood boards, or examples. I create designs that stay consistent with your visual identity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do you offer revisions?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Yes. Every design package includes revision rounds that ensure the final result matches your vision.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Presets & Digital Products FAQ -->
+        <div class="faq-section">
+            <h2 class="faq-section-title">Presets & Digital Products</h2>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do your presets work on phone and desktop?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Yes. All presets include mobile and desktop files compatible with Lightroom.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Will the presets look exactly the same on my photos?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Presets are starting points. Lighting, skin tones, and cameras vary, so small adjustments help match your preferred look.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Are refunds available on digital items?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>For information about refunds on digital products, please review our refund policy:</p>
+                        <a href="refund.html" class="policy-link">View Refund Policy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can beginners use your presets?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Yes. They are designed for fast color consistency with simple instructions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do you offer support if I have trouble installing?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Yes. You receive clear setup instructions and I provide help if needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- E-commerce & Delivery FAQ -->
+        <div class="faq-section">
+            <h2 class="faq-section-title">E-commerce & Delivery</h2>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How do I receive my digital products?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>You receive an instant download link after purchase and a confirmation email.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do you offer printed merchandise?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Yes. I sell print on demand products that ship directly from the production partner to your door.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How long does shipping take for physical items?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>For detailed information about shipping times and delivery, please review our shipping policy:</p>
+                        <a href="shipping.html" class="policy-link">View Shipping Policy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can I license your images for business use?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Yes. Commercial licensing is available for brands, creators, and publishers. Contact me for licensing details and pricing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What payment methods do you accept?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>I accept standard online payment options through the storefront for quick and secure checkout.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <span class="white">Quinton Stocton</span>
+            <span class="red">Photography</span>
+        </div>
+        <p style="color: #E5E0E0; margin-bottom: 1rem;">Capturing Moments, Crafting Memories; Preserving The Essence Of You.</p>
+        
+        <nav class="footer-nav">
+            <div class="footer-nav-column">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="mission.html">Our Mission</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="services.html">Services</a>
+            </div>
+            <div class="footer-nav-column">
+                <a href="reviews.html">Reviews</a>
+                <a href="faq.html">FAQ</a>
+                <a href="affiliate.html">Affiliate Links</a>
+                <a href="social.html">Social</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-nav-column">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="refund.html">Refund Policy</a>
+                <a href="shipping.html">Shipping Policy</a>
+                <a href="cancellation.html">Cancellation Policy</a>
+            </div>
+        </nav>
+
+        <div class="social-icons" id="social">
+            <a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a>
+            <a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a>
+        </div>
+
+        <div class="footer-info">
+            <p>Based in Glasgow, Kentucky</p>
+            <p>© 2025 Quinton Stocton Photography. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

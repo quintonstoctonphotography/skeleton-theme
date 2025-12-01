@@ -1,0 +1,133 @@
+/* ========================================
+   SHOPIFY THEME - BASE STYLES
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-base-background);
+  color: var(--color-base-text);
+  font-family: var(--font-body-family);
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
+  line-height: 1.2;
+  margin-bottom: calc(var(--spacing-unit) * 0.5);
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--color-base-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-base-secondary);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.skip-to-content-link {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  z-index: 9999;
+  padding: 1rem;
+}
+
+.skip-to-content-link:focus {
+  top: 0;
+  left: 0;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+
+.gradient {
+  background: radial-gradient(ellipse at center, var(--color-base-primary) 0%, var(--color-base-background) 70%);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  h4 { font-size: 1.1rem; }
+  h5 { font-size: 1rem; }
+  h6 { font-size: 0.9rem; }
+}
+
+/* ========================================
+   REDUCED MOTION
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

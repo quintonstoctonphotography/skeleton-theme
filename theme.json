@@ -1,0 +1,24 @@
+{
+  "name": "Quinton Stocton Photography",
+  "id": 123456789,
+  "theme": {
+    "name": "Quinton Stocton Photography Theme",
+    "id": 123456789
+  },
+  "development": true,
+  "presets": {
+    "Default": {
+      "colors": {
+        "primary": "#BA0606",
+        "secondary": "#8B0000",
+        "text": "#E5E0E0",
+        "background": "#000000",
+        "border": "#474747"
+      },
+      "typography": {
+        "body_font": "system",
+        "heading_font": "system"
+      }
+    }
+  }
+}

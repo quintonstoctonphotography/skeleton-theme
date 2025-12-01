@@ -1,0 +1,298 @@
+{% comment %}
+  SOCIAL LINKS PAGE TEMPLATE
+  Shopify Liquid template for social media page
+  Displays links to all social platforms and quick navigation
+{% endcomment %}
+
+<!-- Hero Section with Bio -->
+<section class="social-hero" data-section-id="{{ section.id }}" data-section-type="social-hero">
+  <div class="social-hero__inner">
+    <h2 class="social-hero__title">
+      <span class="social-hero__text--primary">Quinton Stocton</span> 
+      <span class="social-hero__text--accent">Photography</span>
+    </h2>
+    <p class="social-hero__bio">Creative Director & Multimedia Marketing Professional | Six years+ of experience building brands, producing high-impact content.</p>
+  </div>
+</section>
+
+<!-- Social Links Section -->
+<section class="social-links" data-section-id="{{ section.id }}" data-section-type="social-links">
+  <div class="social-links__inner" role="list">
+    <a href="https://youtube.com/@quintonstoctonphotography" target="_blank" rel="noopener" class="social-link-card" role="listitem">
+      <div class="social-link-card__icon">
+        <i class="fab fa-youtube" aria-hidden="true"></i>
+      </div>
+      <div class="social-link-card__content">
+        <h3 class="social-link-card__title">YouTube</h3>
+        <p class="social-link-card__handle">@QuintonStoctonPhotography</p>
+      </div>
+    </a>
+
+    <a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" rel="noopener" class="social-link-card" role="listitem">
+      <div class="social-link-card__icon">
+        <i class="fab fa-tiktok" aria-hidden="true"></i>
+      </div>
+      <div class="social-link-card__content">
+        <h3 class="social-link-card__title">TikTok</h3>
+        <p class="social-link-card__handle">@quinton.s.photography</p>
+      </div>
+    </a>
+
+    <a href="https://instagram.com/quintonstoctonphotography" target="_blank" rel="noopener" class="social-link-card" role="listitem">
+      <div class="social-link-card__icon">
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+      </div>
+      <div class="social-link-card__content">
+        <h3 class="social-link-card__title">Instagram</h3>
+        <p class="social-link-card__handle">@quintonstoctonphotography</p>
+      </div>
+    </a>
+
+    <a href="https://facebook.com/quintonstoctonphotography" target="_blank" rel="noopener" class="social-link-card" role="listitem">
+      <div class="social-link-card__icon">
+        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+      </div>
+      <div class="social-link-card__content">
+        <h3 class="social-link-card__title">Facebook</h3>
+        <p class="social-link-card__handle">Quinton Stocton Photography</p>
+      </div>
+    </a>
+
+    <a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" rel="noopener" class="social-link-card" role="listitem">
+      <div class="social-link-card__icon">
+        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+      </div>
+      <div class="social-link-card__content">
+        <h3 class="social-link-card__title">LinkedIn</h3>
+        <p class="social-link-card__handle">Quinton Stocton Photography</p>
+      </div>
+    </a>
+
+    <a href="https://pinterest.com/quintonstoctonphotography" target="_blank" rel="noopener" class="social-link-card" role="listitem">
+      <div class="social-link-card__icon">
+        <i class="fab fa-pinterest-p" aria-hidden="true"></i>
+      </div>
+      <div class="social-link-card__content">
+        <h3 class="social-link-card__title">Pinterest</h3>
+        <p class="social-link-card__handle">Quinton Stocton Photography</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- Quick Links Section -->
+<section class="quick-links-section" data-section-id="{{ section.id }}" data-section-type="quick-links">
+  <div class="quick-links-section__inner">
+    <h2 class="quick-links-section__title">
+      <span class="quick-links-section__text--primary">Quick</span> 
+      <span class="quick-links-section__text--accent">Links</span>
+    </h2>
+    <div class="quick-links-grid" role="list">
+      <a href="/" class="quick-link-card" role="listitem">
+        <div class="quick-link-card__icon">
+          <i class="fas fa-home" aria-hidden="true"></i>
+        </div>
+        <h3 class="quick-link-card__title">Home</h3>
+        <p class="quick-link-card__description">Browse our portfolio</p>
+      </a>
+
+      <a href="/pages/services" class="quick-link-card" role="listitem">
+        <div class="quick-link-card__icon">
+          <i class="fas fa-camera" aria-hidden="true"></i>
+        </div>
+        <h3 class="quick-link-card__title">Services</h3>
+        <p class="quick-link-card__description">Our professional services</p>
+      </a>
+
+      <a href="/pages/contact" class="quick-link-card" role="listitem">
+        <div class="quick-link-card__icon">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </div>
+        <h3 class="quick-link-card__title">Contact</h3>
+        <p class="quick-link-card__description">Get in touch with us</p>
+      </a>
+
+      <a href="/" class="quick-link-card" role="listitem">
+        <div class="quick-link-card__icon">
+          <i class="fas fa-shopping-bag" aria-hidden="true"></i>
+        </div>
+        <h3 class="quick-link-card__title">Shop</h3>
+        <p class="quick-link-card__description">Browse merchandise</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .social-hero {
+    margin-top: 80px;
+    padding: 5rem 2rem 3rem;
+    text-align: center;
+    background: radial-gradient(ellipse at center, var(--color-base-primary) 0%, var(--color-base-background) 70%);
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social-hero__inner {
+    max-width: 900px;
+  }
+
+  .social-hero__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .social-hero__text--accent {
+    color: var(--color-base-primary);
+  }
+
+  .social-hero__bio {
+    font-size: 1.1rem;
+    color: #E5E0E0;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .social-links {
+    padding: 5rem 2rem;
+    background: #000;
+  }
+
+  .social-links__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .social-link-card {
+    background: #1a1a1a;
+    border: 2px solid var(--color-base-primary);
+    border-radius: 10px;
+    padding: 2rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.3s;
+  }
+
+  .social-link-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(186, 6, 6, 0.3);
+  }
+
+  .social-link-card__icon {
+    font-size: 3rem;
+    color: var(--color-base-primary);
+    flex-shrink: 0;
+  }
+
+  .social-link-card__title {
+    font-size: 1.4rem;
+    color: #fff;
+    margin: 0 0 0.5rem;
+  }
+
+  .social-link-card__handle {
+    color: #E5E0E0;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .quick-links-section {
+    padding: 5rem 2rem;
+    background: #0a0a0a;
+  }
+
+  .quick-links-section__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .quick-links-section__title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #fff;
+  }
+
+  .quick-links-section__text--accent {
+    color: var(--color-base-primary);
+  }
+
+  .quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .quick-link-card {
+    background: #1a1a1a;
+    border: 2px solid var(--color-base-border);
+    border-radius: 10px;
+    padding: 2rem;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .quick-link-card:hover {
+    border-color: var(--color-base-primary);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(186, 6, 6, 0.2);
+  }
+
+  .quick-link-card__icon {
+    font-size: 2.5rem;
+    color: var(--color-base-primary);
+    margin-bottom: 1rem;
+  }
+
+  .quick-link-card__title {
+    font-size: 1.3rem;
+    color: #fff;
+    margin: 0 0 0.5rem;
+  }
+
+  .quick-link-card__description {
+    color: #E5E0E0;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .social-hero {
+      margin-top: 60px;
+      padding: 3rem 1.5rem;
+      min-height: 250px;
+    }
+
+    .social-hero__title {
+      font-size: 1.75rem;
+    }
+
+    .social-links {
+      padding: 3rem 1.5rem;
+    }
+
+    .social-links__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .quick-links-section {
+      padding: 3rem 1.5rem;
+    }
+
+    .quick-links-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

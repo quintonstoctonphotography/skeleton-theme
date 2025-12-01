@@ -1,0 +1,1 @@
+User provided two personal photography images. DesignerGPT built a clean portfolio-style layout with branding for 'Quinton Stocton Photography', image captions, a contact form, and footer links.

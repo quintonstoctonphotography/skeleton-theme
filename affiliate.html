@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugged-In Affiliation | Quinton Stocton Photography</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-affiliate {
+            margin-top: 80px;
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            background: radial-gradient(ellipse at center, #BA0606 0%, #000000 70%);
+        }
+
+        .hero-affiliate h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .hero-affiliate h1 .red {
+            color: #BA0606;
+        }
+
+        .hero-affiliate p {
+            font-size: 1.2rem;
+            color: #E5E0E0;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .featured-carousel {
+            padding: 4rem 2rem;
+            background: #000;
+        }
+
+        .featured-carousel h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #fff;
+        }
+
+        .featured-carousel h2 .red {
+            color: #BA0606;
+        }
+
+        .carousel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .featured-card {
+            background: linear-gradient(135deg, #BA0606 0%, #8B0000 100%);
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 3px solid #BA0606;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(186, 6, 6, 0.6);
+        }
+
+        .featured-badge {
+            background: #fff;
+            color: #BA0606;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .featured-card h3 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .featured-card p {
+            color: #E5E0E0;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-btn {
+            background: #fff;
+            color: #BA0606;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .featured-btn:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .affiliate-groups {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .group-section {
+            margin-bottom: 4rem;
+        }
+
+        .group-section h2 {
+            font-size: 2.2rem;
+            color: #BA0606;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .affiliate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .affiliate-card {
+            background: #1a1a1a;
+            border: 2px solid #BA0606;
+            border-radius: 10px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .affiliate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(186, 6, 6, 0.4);
+            background: #BA0606;
+        }
+
+        .affiliate-icon {
+            width: 60px;
+            height: 60px;
+            background: #BA0606;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .affiliate-card:hover .affiliate-icon {
+            background: #fff;
+        }
+
+        .affiliate-content {
+            flex: 1;
+        }
+
+        .affiliate-content h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .affiliate-content p {
+            color: #E5E0E0;
+            font-size: 0.85rem;
+        }
+
+        .affiliate-tag {
+            background: #BA0606;
+            color: #fff;
+            padding: 0.3rem 0.7rem;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-affiliate h1 {
+                font-size: 2.2rem;
+            }
+
+            .carousel-container,
+            .affiliate-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Drawer Navigation -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <nav class="drawer-nav" id="drawerNav">
+        <div class="drawer-header">
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+            <button class="drawer-close" id="drawerClose">&times;</button>
+        </div>
+        <ul class="drawer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="mission.html">Our Mission</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="affiliate.html">Affiliate Links</a></li>
+            <li><a href="social.html">Social</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="social-icons drawer-social-icons"><a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a><a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a><a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a><a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a><a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a></div>
+    </nav>
+
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-left">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="mission.html">Our Mission</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="affiliate.html" class="active">Affiliate Links</a></li>
+            <li><a href="social.html">Social</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-affiliate">
+        <h1><span class="red">Plugged-In Affiliation's</span> <span class="white">Successful Affiliate Marketing</span></h1>
+        <p style="color: #fff; margin-top: 1rem;">Model</p>
+        <p style="margin-top: 1rem;">Your gateway to unlimited wealth, wealth that can be from anywhere and everywhere. It all depends on the amount of work you put into it. If you're a hard worker and hustle every day, this is the blueprint to make it happen.</p>
+    </section>
+
+    <section class="featured-carousel">
+        <h2><span class="white">Top</span> <span class="red">Recommendations</span></h2>
+        <div class="carousel-container">
+            <div class="featured-card">
+                <span class="featured-badge">🏆 HIGHEST EARNING</span>
+                <h3>Hulu</h3>
+                <p>Enjoy 30 days of Hulu for FREE</p>
+                <a href="#" class="featured-btn">Get Started</a>
+            </div>
+
+            <div class="featured-card">
+                <span class="featured-badge">⭐ RECOMMENDED</span>
+                <h3>Headspace</h3>
+                <p>Sign up for Headspace today and get a 14 day free trial!</p>
+                <a href="#" class="featured-btn">Try Now</a>
+            </div>
+
+            <div class="featured-card">
+                <span class="featured-badge">🔥 TRENDING</span>
+                <h3>TikTok Ads</h3>
+                <p>Advertise on TikTok & earn up to $6,000 in credits</p>
+                <a href="#" class="featured-btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Invitation.codes Widget -->
+    <section style="padding: 4rem 2rem; background: #0a0a0a; text-align: center;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: #fff;"><span style="color: #fff;">All My</span> <span style="color: #BA0606;">Referral Codes</span></h2>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <invitation-user-codes user="WsMpF1jyU" layout="grid" dark="true" heading="Plugged-In Affiliation"></invitation-user-codes>
+        </div>
+    </section>
+
+    <section class="affiliate-groups">
+        <div class="group-section">
+            <h2>Banking & Financial</h2>
+            <div class="affiliate-grid">
+                <a href="#" class="affiliate-card">
+                    <div class="affiliate-icon">💰</div>
+                    <div class="affiliate-content">
+                        <h3>Kashkick</h3>
+                        <p>Get Paid To Play Games & More</p>
+                        <span class="affiliate-tag">$10 BONUS</span>
+                    </div>
+                </a>
+
+                <a href="#" class="affiliate-card">
+                    <div class="affiliate-icon">🎮</div>
+                    <div class="affiliate-content">
+                        <h3>InboxDollars Referral</h3>
+                        <p>Get Paid to Play Games & Complete Offers</p>
+                        <span class="affiliate-tag">$10 BONUS</span>
+                    </div>
+                </a>
+
+                <a href="#" class="affiliate-card">
+                    <div class="affiliate-icon">🃏</div>
+                    <div class="affiliate-content">
+                        <h3>Bridge Card</h3>
+                        <p>Use my code RWQZVT! Earn Cash Back on purchases</p>
+                        <span class="affiliate-tag">CASHBACK</span>
+                    </div>
+                </a>
+
+                <a href="#" class="affiliate-card">
+                    <div class="affiliate-icon">🐕</div>
+                    <div class="affiliate-content">
+                        <h3>Fetch</h3>
+                        <p>Use Code CTTWXQ - $10 Sign Up Bonus. #1 App For Rewards</p>
+                        <span class="affiliate-tag">$10 BONUS</span>
+                    </div>
+                </a>
+
+                <a href="#" class="affiliate-card">
+                    <div class="affiliate-icon">💵</div>
+                    <div class="affiliate-content">
+                        <h3>Eureka Surveys</h3>
+                        <p>Use code IUWF3M! Get Paid To Take Surveys</p>
+                        <span class="affiliate-tag">PAID SURVEYS</span>
+                    </div>
+                </a>
+
+                <a href="#" class="affiliate-card">
+                    <div class="affiliate-icon">🔄</div>
+                    <div class="affiliate-content">
+                        <h3>Survey Spin</h3>
+                        <p>Use code 5MIPXP! Get Paid To Take Surveys</p>
+                        <span class="affiliate-tag">PAID SURVEYS</span>
+                    </div>
+                </a>
+
+                <a href="#" class="affiliate-card">
+                    <div class="affiliate-icon">📊</div>
+                    <div class="affiliate-content">
+                        <h3>DaslyDash Referral</h3>
+                        <p>Get $60+ Instantly + hundreds more weekly</p>
+                        <span class="affiliate-tag">$60 BONUS</span>
+                    </div>
+                </a>
+
+                <a href="#" class="affiliate-card">
+                    <div class="affiliate-icon">💳</div>
+                    <div class="affiliate-content">
+                        <h3>Current Banking</h3>
+                        <p>Use this app to bypass any banking requirements</p>
+                        <span class="affiliate-tag">BANKING</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="group-section">
+            <h2>Sports Betting & Gaming</h2>
+            <div class="affiliate-grid">
+                <a href="#" class="affiliate-card">
+                    <div class="affiliate-icon">🎰</div>
+                    <div class="affiliate-content">
+                        <h3>Self Credit Card</h3>
+                        <p>Earn a $100 bonus and build your credit safely</p>
+                        <span class="affiliate-tag">$100 BONUS</span>
+                    </div>
+                </a>
+
+                <a href="#" class="affiliate-card">
+                    <div class="affiliate-icon">🏈</div>
+                    <div class="affiliate-content">
+                        <h3>TalkSpace</h3>
+                        <p>Mental health support services</p>
+                        <span class="affiliate-tag">WELLNESS</span>
+                    </div>
+                </a>
+
+                <a href="#" class="affiliate-card">
+                    <div class="affiliate-icon">⚡</div>
+                    <div class="affiliate-content">
+                        <h3>Kraken</h3>
+                        <p>Cryptocurrency trading platform</p>
+                        <span class="affiliate-tag">CRYPTO</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="group-section">
+            <h2>Miscellaneous</h2>
+            <div class="affiliate-grid">
+                <a href="#" class="affiliate-card">
+                    <div class="affiliate-icon">🛍️</div>
+                    <div class="affiliate-content">
+                        <h3>QSP Merchandise</h3>
+                        <p>Shop official Quinton Stocton Photography gear</p>
+                        <span class="affiliate-tag">MERCH</span>
+                    </div>
+                </a>
+
+                <a href="#" class="affiliate-card">
+                    <div class="affiliate-icon">📹</div>
+                    <div class="affiliate-content">
+                        <h3>Watch QSP Highlights</h3>
+                        <p>View my photography portfolio highlights</p>
+                        <span class="affiliate-tag">PORTFOLIO</span>
+                    </div>
+                </a>
+
+                <a href="#" class="affiliate-card">
+                    <div class="affiliate-icon">📸</div>
+                    <div class="affiliate-content">
+                        <h3>Top Rated Kentucky Photographer</h3>
+                        <p>See why I'm one of Kentucky's best</p>
+                        <span class="affiliate-tag">REVIEWS</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">
+            <span class="white">Quinton Stocton</span>
+            <span class="red">Photography</span>
+        </div>
+        <p style="color: #E5E0E0; margin-bottom: 1rem;">Capturing Moments, Crafting Memories; Preserving The Essence Of You.</p>
+        
+        <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="index.html#collections">Collections</a>
+            <a href="index.html#services">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="index.html#reviews">Reviews</a>
+            <a href="affiliate.html">Affiliate Links</a>
+            <a href="social.html">Social</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="refund.html">Refund</a>
+            <a href="shipping.html">Shipping</a>
+            <a href="cancellation.html">Cancellation</a>
+        </nav>
+
+        <div class="social-icons" id="social">
+            <a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a>
+            <a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a>
+        </div>
+
+        <div class="footer-info">
+            <p>Based in Glasgow, Kentucky</p>
+            <p>© 2025 Quinton Stocton Photography. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Invitation.codes Widget Script -->
+    <script defer async src="https://invitation.codes/invitation-widgets.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

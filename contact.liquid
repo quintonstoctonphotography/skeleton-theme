@@ -1,0 +1,342 @@
+{% comment %}
+  CONTACT PAGE TEMPLATE
+  Shopify Liquid template for contact page
+  Displays contact information and message form
+{% endcomment %}
+
+<!-- Hero Section -->
+<section class="contact-hero" data-section-id="{{ section.id }}" data-section-type="contact-hero">
+  <div class="contact-hero__inner">
+    <h1 class="contact-hero__title">
+      <span class="contact-hero__text--primary">Let's</span> 
+      <span class="contact-hero__text--accent">Connect</span>
+    </h1>
+    <p class="contact-hero__subtitle">Have a project in mind? Reach out and let's create something amazing together.</p>
+  </div>
+</section>
+
+<!-- Contact Container -->
+<section class="contact-container" data-section-id="{{ section.id }}" data-section-type="contact-main">
+  <div class="contact-container__inner">
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h2 class="contact-info__heading">
+        <span class="contact-info__text--accent">Get in</span> Touch
+      </h2>
+      
+      <div class="info-item">
+        <h3 class="info-item__title">Phone</h3>
+        <p class="info-item__text">
+          <a href="tel:+1-270-283-7950" class="info-item__link">+1 (270) 283-7950</a>
+        </p>
+      </div>
+
+      <div class="info-item">
+        <h3 class="info-item__title">Email</h3>
+        <p class="info-item__text">
+          <a href="mailto:customersupport@quintonstoctonphotography.com" class="info-item__link">customersupport@quintonstoctonphotography.com</a>
+        </p>
+      </div>
+
+      <div class="info-item">
+        <h3 class="info-item__title">Location</h3>
+        <p class="info-item__text">Glasgow, Kentucky</p>
+      </div>
+
+      <div class="info-item">
+        <h3 class="info-item__title">Hours</h3>
+        <p class="info-item__text">
+          By Appointment<br>
+          Monday - Friday: 9am - 5pm
+        </p>
+      </div>
+
+      <div class="info-item">
+        <h3 class="info-item__title">Follow</h3>
+        <div class="social-links" role="list">
+          <a href="https://facebook.com/quintonstoctonphotography" target="_blank" rel="noopener" title="Facebook" class="social-link" role="listitem">
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+          </a>
+          <a href="https://instagram.com/quintonstoctonphotography" target="_blank" rel="noopener" title="Instagram" class="social-link" role="listitem">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" rel="noopener" title="TikTok" class="social-link" role="listitem">
+            <i class="fab fa-tiktok" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form-wrapper">
+      <h2 class="contact-form__heading">
+        <span class="contact-form__text--accent">Send</span> Message
+      </h2>
+      
+      <form id="contactForm" method="POST" novalidate class="contact-form">
+        <div class="form-group">
+          <label for="contact-name" class="form-label">Name <span aria-label="required">*</span></label>
+          <input type="text" id="contact-name" name="name" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-email" class="form-label">Email <span aria-label="required">*</span></label>
+          <input type="email" id="contact-email" name="email" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-service" class="form-label">Service Type <span aria-label="required">*</span></label>
+          <select id="contact-service" name="service" class="form-input" required>
+            <option value="">Select a service...</option>
+            <option value="wedding">Wedding Photography</option>
+            <option value="portrait">Portrait Photography</option>
+            <option value="event">Event Photography</option>
+            <option value="branding">Branding & Design</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-message" class="form-label">Message <span aria-label="required">*</span></label>
+          <textarea id="contact-message" name="message" class="form-textarea" required></textarea>
+        </div>
+
+        <button type="submit" class="button button--primary button--large">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-hero {
+    margin-top: 80px;
+    padding: 5rem 2rem 3rem;
+    text-align: center;
+    background: radial-gradient(ellipse at center, var(--color-base-primary) 0%, var(--color-base-background) 70%);
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-hero__inner {
+    max-width: 900px;
+  }
+
+  .contact-hero__title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .contact-hero__text--accent {
+    color: var(--color-base-primary);
+  }
+
+  .contact-hero__subtitle {
+    font-size: 1.2rem;
+    color: #E5E0E0;
+  }
+
+  .contact-container {
+    padding: 5rem 2rem;
+    background: #000;
+  }
+
+  .contact-container__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .contact-info {
+    background: #1a1a1a;
+    border: 2px solid var(--color-base-primary);
+    border-radius: 10px;
+    padding: 3rem;
+  }
+
+  .contact-info__heading {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #fff;
+  }
+
+  .contact-info__text--accent {
+    color: var(--color-base-primary);
+  }
+
+  .info-item {
+    margin-bottom: 2rem;
+  }
+
+  .info-item__title {
+    font-size: 1.1rem;
+    color: var(--color-base-primary);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .info-item__text {
+    color: #E5E0E0;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .info-item__link {
+    color: #E5E0E0;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .info-item__link:hover {
+    color: var(--color-base-primary);
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+    background: var(--color-base-primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 1.1rem;
+  }
+
+  .social-link:hover {
+    background: #8B0000;
+    transform: translateY(-3px);
+  }
+
+  .contact-form-wrapper {
+    background: #1a1a1a;
+    border: 2px solid var(--color-base-primary);
+    border-radius: 10px;
+    padding: 3rem;
+  }
+
+  .contact-form__heading {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #fff;
+  }
+
+  .contact-form__text--accent {
+    color: var(--color-base-primary);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-label {
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    padding: 0.8rem 1rem;
+    background: #000;
+    border: 1px solid var(--color-base-border);
+    border-radius: 5px;
+    color: #E5E0E0;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+
+  .form-input:focus,
+  .form-textarea:focus {
+    outline: none;
+    border-color: var(--color-base-primary);
+    box-shadow: 0 0 0 3px rgba(186, 6, 6, 0.1);
+  }
+
+  .form-textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background: var(--color-base-primary);
+    color: #fff;
+    border: 2px solid var(--color-base-primary);
+    border-radius: 5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+
+  .button:hover {
+    background: #8B0000;
+    border-color: #8B0000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(186, 6, 6, 0.4);
+  }
+
+  .button--large {
+    padding: 1.2rem 3rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .contact-hero {
+      margin-top: 60px;
+      padding: 3rem 1.5rem;
+      min-height: 250px;
+    }
+
+    .contact-hero__title {
+      font-size: 2rem;
+    }
+
+    .contact-container {
+      padding: 3rem 1.5rem;
+    }
+
+    .contact-container__inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .contact-info,
+    .contact-form-wrapper {
+      padding: 2rem;
+    }
+
+    .button--large {
+      padding: 1rem;
+    }
+  }
+</style>

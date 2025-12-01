@@ -1,0 +1,375 @@
+{% comment %}
+  SERVICES PAGE TEMPLATE
+  Shopify Liquid template for services page
+  Displays all available services with pricing
+{% endcomment %}
+
+<!-- Hero Section -->
+<section class="services-hero" data-section-id="{{ section.id }}" data-section-type="services-hero">
+  <div class="services-hero__inner">
+    <h1 class="services-hero__title">
+      <span class="services-hero__text--primary">Professional</span> 
+      <span class="services-hero__text--accent">Services</span>
+    </h1>
+    <p class="services-hero__subtitle">Professional photography, branding, and digital design services tailored to your unique story.</p>
+  </div>
+</section>
+
+<!-- Services Grid -->
+<section class="services-grid" data-section-id="{{ section.id }}" data-section-type="services-grid">
+  <div class="services-grid__inner">
+    <!-- Wedding Photography -->
+    <div class="service-card" data-service="wedding">
+      <div class="service-card__image">
+        <i class="fas fa-ring" aria-hidden="true"></i>
+      </div>
+      <div class="service-card__content">
+        <h3 class="service-card__title">Wedding Photography</h3>
+        <p class="service-card__description">
+          Full-day coverage capturing your entire wedding story. Includes 300+ edited photos, sneak peek gallery, and highlight slideshow.
+        </p>
+        <div class="service-card__pricing">
+          <span class="service-card__price">$1,750</span>
+          <span class="service-card__rate">$225/hr</span>
+        </div>
+        <a href="https://quintonstoctonphotography.com/products/wedding-photography" target="_blank" rel="noopener" class="button button--primary">View Details</a>
+      </div>
+    </div>
+
+    <!-- Lifestyle/Portrait Photography -->
+    <div class="service-card" data-service="portrait">
+      <div class="service-card__image">
+        <i class="fas fa-camera" aria-hidden="true"></i>
+      </div>
+      <div class="service-card__content">
+        <h3 class="service-card__title">Lifestyle/Portrait Photography</h3>
+        <p class="service-card__description">
+          Capturing individuals, families, and headshots for professional or personal use. 1-2 hours coverage with 20+ edited images.
+        </p>
+        <div class="service-card__pricing">
+          <span class="service-card__price">$250</span>
+          <span class="service-card__rate">$125/hr</span>
+        </div>
+        <a href="https://quintonstoctonphotography.com/products/portrait-lifestyle-photography" target="_blank" rel="noopener" class="button button--primary">View Details</a>
+      </div>
+    </div>
+
+    <!-- Event Photography -->
+    <div class="service-card" data-service="event">
+      <div class="service-card__image">
+        <i class="fas fa-calendar-days" aria-hidden="true"></i>
+      </div>
+      <div class="service-card__content">
+        <h3 class="service-card__title">Event Photography</h3>
+        <p class="service-card__description">
+          Professional coverage for prom, graduation, birthdays, corporate events, and special occasions. 1-2 hours with 20+ edited images.
+        </p>
+        <div class="service-card__pricing">
+          <span class="service-card__price">$250</span>
+          <span class="service-card__rate">$125/hr</span>
+        </div>
+        <a href="https://quintonstoctonphotography.com/products/event-photography" target="_blank" rel="noopener" class="button button--primary">View Details</a>
+      </div>
+    </div>
+
+    <!-- Boudoir Photography -->
+    <div class="service-card" data-service="boudoir">
+      <div class="service-card__image">
+        <i class="fas fa-heart" aria-hidden="true"></i>
+      </div>
+      <div class="service-card__content">
+        <h3 class="service-card__title">Boudoir Photography</h3>
+        <p class="service-card__description">
+          Empowering and tasteful sessions in studio or on-location. Includes professional posing guidance and 20+ edited images.
+        </p>
+        <div class="service-card__pricing">
+          <span class="service-card__price">$325</span>
+          <span class="service-card__rate">$150/hr</span>
+        </div>
+        <a href="https://quintonstoctonphotography.com/products/boudoir-photography" target="_blank" rel="noopener" class="button button--primary">View Details</a>
+      </div>
+    </div>
+
+    <!-- Pet Photography -->
+    <div class="service-card" data-service="pet">
+      <div class="service-card__image">
+        <i class="fas fa-paw" aria-hidden="true"></i>
+      </div>
+      <div class="service-card__content">
+        <h3 class="service-card__title">Pet Photography</h3>
+        <p class="service-card__description">
+          Candid or posed shots of your furry, scaly, or feathered friends. Personality-driven and fun! 1-2 hours with 20+ edited images.
+        </p>
+        <div class="service-card__pricing">
+          <span class="service-card__price">$225</span>
+          <span class="service-card__rate">$125/hr</span>
+        </div>
+        <a href="https://quintonstoctonphotography.com/products/pet-photography" target="_blank" rel="noopener" class="button button--primary">View Details</a>
+      </div>
+    </div>
+
+    <!-- Photo Editing & Restoration -->
+    <div class="service-card" data-service="editing">
+      <div class="service-card__image">
+        <i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i>
+      </div>
+      <div class="service-card__content">
+        <h3 class="service-card__title">Photo Editing & Restoration</h3>
+        <p class="service-card__description">
+          Retouching, color correction, and restoration for existing images. Includes consultation, concepts, and revision rounds.
+        </p>
+        <div class="service-card__pricing">
+          <span class="service-card__price">$50</span>
+          <span class="service-card__rate">/hr</span>
+        </div>
+        <a href="https://quintonstoctonphotography.com/products/photo-editing-restoration" target="_blank" rel="noopener" class="button button--primary">View Details</a>
+      </div>
+    </div>
+
+    <!-- Newborn Photography -->
+    <div class="service-card" data-service="newborn">
+      <div class="service-card__image">
+        <i class="fas fa-baby" aria-hidden="true"></i>
+      </div>
+      <div class="service-card__content">
+        <h3 class="service-card__title">Newborn Photography</h3>
+        <p class="service-card__description">
+          Small studio setup with lighting in your home. 2-4 hours coverage with beautiful lifestyle or studio-style images.
+        </p>
+        <div class="service-card__pricing">
+          <span class="service-card__price">$300</span>
+          <span class="service-card__rate">$125/hr</span>
+        </div>
+        <a href="https://quintonstoctonphotography.com/products/newborn-photography" target="_blank" rel="noopener" class="button button--primary">View Details</a>
+      </div>
+    </div>
+
+    <!-- Commercial Photography -->
+    <div class="service-card" data-service="commercial">
+      <div class="service-card__image">
+        <i class="fas fa-briefcase" aria-hidden="true"></i>
+      </div>
+      <div class="service-card__content">
+        <h3 class="service-card__title">Commercial Photography</h3>
+        <p class="service-card__description">
+          Products, fashion, sports, architecture, food, vehicle, and more. Clean, crisp shots for any commercial need.
+        </p>
+        <div class="service-card__pricing">
+          <span class="service-card__price">$175+</span>
+          <span class="service-card__rate">$100/hr</span>
+        </div>
+        <a href="https://quintonstoctonphotography.com/products/commercial-photography" target="_blank" rel="noopener" class="button button--primary">View Details</a>
+      </div>
+    </div>
+
+    <!-- Logo Design & Branding -->
+    <div class="service-card" data-service="branding">
+      <div class="service-card__image">
+        <i class="fas fa-palette" aria-hidden="true"></i>
+      </div>
+      <div class="service-card__content">
+        <h3 class="service-card__title">Logo Design & Branding</h3>
+        <p class="service-card__description">
+          Custom high-impact logo and brand identity design. Includes consultation, design concepts, and high-res files for web & print.
+        </p>
+        <div class="service-card__pricing">
+          <span class="service-card__price">Custom</span>
+          <span class="service-card__rate">Quote</span>
+        </div>
+        <a href="https://quintonstoctonphotography.com/products/logo-design-branding" target="_blank" rel="noopener" class="button button--primary">View Details</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="services-cta" data-section-id="{{ section.id }}" data-section-type="services-cta">
+  <div class="services-cta__inner">
+    <h2 class="services-cta__title">Ready to get started?</h2>
+    <p class="services-cta__description">Contact me today to discuss your project and get a custom quote.</p>
+    <a href="/pages/contact" class="button button--primary button--large">Get In Touch</a>
+  </div>
+</section>
+
+<style>
+  .services-hero {
+    margin-top: 80px;
+    padding: 5rem 2rem 3rem;
+    text-align: center;
+    background: radial-gradient(ellipse at center, var(--color-base-primary) 0%, var(--color-base-background) 70%);
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .services-hero__inner {
+    max-width: 900px;
+  }
+
+  .services-hero__title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .services-hero__text--accent {
+    color: var(--color-base-primary);
+  }
+
+  .services-hero__subtitle {
+    font-size: 1.2rem;
+    color: #E5E0E0;
+  }
+
+  .services-grid {
+    padding: 5rem 2rem;
+    background: #000;
+  }
+
+  .services-grid__inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .service-card {
+    background: #1a1a1a;
+    border: 2px solid var(--color-base-primary);
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(186, 6, 6, 0.4);
+  }
+
+  .service-card__image {
+    font-size: 3rem;
+    color: var(--color-base-primary);
+    margin-bottom: 1.5rem;
+  }
+
+  .service-card__title {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .service-card__description {
+    font-size: 0.95rem;
+    color: #E5E0E0;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .service-card__pricing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-card__price {
+    font-size: 1.5rem;
+    color: var(--color-base-primary);
+    font-weight: 700;
+  }
+
+  .service-card__rate {
+    font-size: 0.9rem;
+    color: #E5E0E0;
+  }
+
+  .services-cta {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: #0a0a0a;
+  }
+
+  .services-cta__inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .services-cta__title {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .services-cta__description {
+    font-size: 1.1rem;
+    color: #E5E0E0;
+    margin-bottom: 2rem;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background: var(--color-base-primary);
+    color: #fff;
+    border: 2px solid var(--color-base-primary);
+    border-radius: 5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+
+  .button:hover {
+    background: #8B0000;
+    border-color: #8B0000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(186, 6, 6, 0.4);
+  }
+
+  .button--large {
+    padding: 1.2rem 3rem;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .services-hero {
+      margin-top: 60px;
+      padding: 3rem 1.5rem;
+      min-height: 250px;
+    }
+
+    .services-hero__title {
+      font-size: 2rem;
+    }
+
+    .services-grid {
+      padding: 3rem 1.5rem;
+    }
+
+    .services-grid__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .services-cta {
+      padding: 3rem 1.5rem;
+    }
+
+    .services-cta__title {
+      font-size: 1.75rem;
+    }
+
+    .button {
+      width: 100%;
+    }
+  }
+</style>

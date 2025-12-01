@@ -1,0 +1,313 @@
+{% comment %}
+  FAQ PAGE TEMPLATE
+  Shopify Liquid template for FAQ page
+  Displays frequently asked questions with expandable answers
+{% endcomment %}
+
+<!-- Hero Section -->
+<section class="faq-hero" data-section-id="{{ section.id }}" data-section-type="faq-hero">
+  <div class="faq-hero__inner">
+    <h1 class="faq-hero__title">
+      <span class="faq-hero__text--primary">Frequently</span> 
+      <span class="faq-hero__text--accent">Asked Questions</span>
+    </h1>
+    <p class="faq-hero__subtitle">Find answers to common questions about our services, booking process, and pricing.</p>
+  </div>
+</section>
+
+<!-- FAQ Container -->
+<section class="faq-container" data-section-id="{{ section.id }}" data-section-type="faq-main">
+  <div class="faq-container__inner">
+    <!-- Booking & Pricing FAQ -->
+    <div class="faq-section">
+      <h2 class="faq-section__title">Booking & Pricing</h2>
+      
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>How do I book a session?</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="faq-item__answer" hidden>
+          <div class="faq-item__content">
+            <p>To book a session, simply fill out our contact form or call us at +1 (270) 283-7950. We'll discuss your needs, availability, and provide you with a custom quote.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>What is your pricing?</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="faq-item__answer" hidden>
+          <div class="faq-item__content">
+            <p>Pricing varies depending on the service type and duration. Wedding packages start at $1,250, portraits at $250, and events at $250. Please contact us for a custom quote for your specific needs.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>Do you offer payment plans?</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="faq-item__answer" hidden>
+          <div class="faq-item__content">
+            <p>Yes! We offer flexible payment options for larger projects. A deposit is typically required to secure your date, with the balance due before delivery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services & Deliverables FAQ -->
+    <div class="faq-section">
+      <h2 class="faq-section__title">Services & Deliverables</h2>
+      
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>What is included in the wedding package?</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="faq-item__answer" hidden>
+          <div class="faq-item__content">
+            <p>Our wedding package includes full-day coverage (up to 10 hours), 300+ edited photos, sneak peek gallery within 48 hours, and a highlight slideshow.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>When can I get my photos?</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="faq-item__answer" hidden>
+          <div class="faq-item__content">
+            <p>For most sessions, edited photos are delivered within 2-3 weeks. Wedding galleries are typically ready 4-6 weeks after your event. Rush editing is available for an additional fee.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>Do you offer prints and albums?</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="faq-item__answer" hidden>
+          <div class="faq-item__content">
+            <p>Yes! We offer high-quality prints, albums, and other products. Contact us for pricing and available options after your session.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Policies & Agreements FAQ -->
+    <div class="faq-section">
+      <h2 class="faq-section__title">Policies & Agreements</h2>
+      
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>What is your cancellation policy?</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="faq-item__answer" hidden>
+          <div class="faq-item__content">
+            <p>Cancellations made 30 days in advance receive a full refund. Cancellations within 30 days forfeit the deposit. <a href="/pages/cancellation-policy">View full policy</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>Do you have a refund policy?</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="faq-item__answer" hidden>
+          <div class="faq-item__content">
+            <p>Yes, we stand behind our work. If you're not satisfied with your photos, please contact us within 7 days of delivery. <a href="/pages/refund-policy">View full policy</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>What are your copyright terms?</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="faq-item__answer" hidden>
+          <div class="faq-item__content">
+            <p>You receive full rights to use your photos for personal use. Commercial licensing is available for an additional fee. <a href="/pages/terms-of-service">View full terms</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-hero {
+    margin-top: 80px;
+    padding: 5rem 2rem 3rem;
+    text-align: center;
+    background: radial-gradient(ellipse at center, var(--color-base-primary) 0%, var(--color-base-background) 70%);
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .faq-hero__inner {
+    max-width: 900px;
+  }
+
+  .faq-hero__title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .faq-hero__text--accent {
+    color: var(--color-base-primary);
+  }
+
+  .faq-hero__subtitle {
+    font-size: 1.2rem;
+    color: #E5E0E0;
+  }
+
+  .faq-container {
+    padding: 5rem 2rem;
+    background: #000;
+  }
+
+  .faq-container__inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .faq-section {
+    margin-bottom: 4rem;
+  }
+
+  .faq-section__title {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--color-base-primary);
+    padding-bottom: 1rem;
+  }
+
+  .faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-base-border);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .faq-item:hover {
+    border-color: var(--color-base-primary);
+  }
+
+  .faq-item__question {
+    width: 100%;
+    padding: 1.5rem;
+    background: #1a1a1a;
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+  }
+
+  .faq-item__question:hover {
+    background: #252525;
+  }
+
+  .faq-item__question[aria-expanded="true"] {
+    background: var(--color-base-primary);
+    color: #fff;
+  }
+
+  .faq-item__question i {
+    transition: transform 0.3s;
+    color: var(--color-base-primary);
+  }
+
+  .faq-item__question[aria-expanded="true"] i {
+    transform: rotate(180deg);
+    color: #fff;
+  }
+
+  .faq-item__answer {
+    background: #0a0a0a;
+  }
+
+  .faq-item__content {
+    padding: 1.5rem;
+    color: #E5E0E0;
+    line-height: 1.8;
+  }
+
+  .faq-item__content p {
+    margin: 0;
+  }
+
+  .faq-item__content a {
+    color: var(--color-base-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+
+  .faq-item__content a:hover {
+    color: #8B0000;
+  }
+
+  @media (max-width: 768px) {
+    .faq-hero {
+      margin-top: 60px;
+      padding: 3rem 1.5rem;
+      min-height: 250px;
+    }
+
+    .faq-hero__title {
+      font-size: 2rem;
+    }
+
+    .faq-container {
+      padding: 3rem 1.5rem;
+    }
+
+    .faq-item__question {
+      padding: 1.2rem;
+      font-size: 1rem;
+    }
+
+    .faq-item__content {
+      padding: 1.2rem;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    'use strict';
+
+    const faqButtons = document.querySelectorAll('.faq-item__question');
+
+    faqButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        const answer = button.nextElementSibling;
+
+        button.setAttribute('aria-expanded', !isExpanded);
+        answer.hidden = isExpanded;
+      });
+    });
+  })();
+</script>

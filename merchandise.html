@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchandise | Quinton Stocton Photography</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-merchandise {
+            margin-top: 80px;
+            padding: 5rem 1rem 3rem;
+            text-align: center;
+            background: radial-gradient(ellipse at center, #BA0606 0%, #000000 70%);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-merchandise h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .hero-merchandise h1 .red {
+            color: #BA0606;
+        }
+
+        .hero-merchandise p {
+            font-size: 1.2rem;
+            color: #E5E0E0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .merchandise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .merchandise-card {
+            background: #1a1a1a;
+            border: 2px solid #BA0606;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 30px rgba(186, 6, 6, 0.3);
+        }
+
+        .merchandise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 40px rgba(186, 6, 6, 0.5);
+        }
+
+        .merchandise-image {
+            width: 100%;
+            height: 250px;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #BA0606;
+            font-size: 3rem;
+            overflow: hidden;
+        }
+
+        .merchandise-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .merchandise-card h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            min-height: 3rem;
+        }
+
+        .merchandise-card p {
+            color: #E5E0E0;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .merchandise-price {
+            color: #BA0606;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .merchandise-link {
+            display: inline-block;
+            background: #BA0606;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .merchandise-link:hover {
+            background: #8B0000;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .merchandise-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+                padding: 3rem 1rem;
+            }
+
+            .hero-merchandise h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Drawer Navigation -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <nav class="drawer-nav" id="drawerNav">
+        <div class="drawer-header">
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+            <button class="drawer-close" id="drawerClose">&times;</button>
+        </div>
+        <ul class="drawer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#collections">Collections</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+            <li><a href="affiliate.html">Affiliate Links</a></li>
+            <li><a href="social.html">Social</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="social-icons drawer-social-icons"><a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a><a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a><a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a><a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a><a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a></div>
+    </nav>
+
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-left">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#collections">Collections</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+            <li><a href="affiliate.html">Affiliate Links</a></li>
+            <li><a href="social.html">Social</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-merchandise">
+        <h1><span class="white">QSP</span> <span class="red">Merchandise</span></h1>
+        <p>Branded apparel, prints, and exclusive products that carry the essence of our creative vision.</p>
+    </section>
+
+    <!-- Merchandise Grid -->
+    <section class="merchandise-grid">
+        <div class="merchandise-card">
+            <div class="merchandise-image"><i class="fas fa-hoodie"></i></div>
+            <div class="merchandise-content">
+                <h3>Created to Create Sweatshirt</h3>
+                <p>DTFlex Graphic Pullover by Quinton Stocton Photography</p>
+                <div class="merchandise-price">$39.99</div>
+                <a href="https://quintonstoctonphotography.com/products/created-to-create-sweatshirt-by-quinton-stocton-photography-dtflex-graphic-pullover" target="_blank" class="merchandise-link">View Product</a>
+            </div>
+        </div>
+
+        <div class="merchandise-card">
+            <div class="merchandise-image"><i class="fas fa-bag-shopping"></i></div>
+            <div class="merchandise-content">
+                <h3>Shoulder Bag - Black and Gold</h3>
+                <p>Minimalist Design by Quinton Stocton Photography "Digital Artist Elite" Limited Designs</p>
+                <div class="merchandise-price">$29.99</div>
+                <a href="https://quintonstoctonphotography.com/products/shoulder-bag-black-and-gold-minimalist-design-by-quinton-stocton-photography-s-digital-artist-elite-limited-designs" target="_blank" class="merchandise-link">View Product</a>
+            </div>
+        </div>
+
+        <div class="merchandise-card">
+            <div class="merchandise-image"><i class="fas fa-mug-hot"></i></div>
+            <div class="merchandise-content">
+                <h3>Designs that define you - Travel Mug</h3>
+                <p>Travel mug with a handle - 25 oz capacity</p>
+                <div class="merchandise-price">From $24.99</div>
+                <a href="https://quintonstoctonphotography.com/products/designs-that-define-you-travel-mug-with-a-handle-quinton-stocton-photogtaphy" target="_blank" class="merchandise-link">View Product</a>
+            </div>
+        </div>
+
+        <div class="merchandise-card">
+            <div class="merchandise-image"><i class="fas fa-hoodie"></i></div>
+            <div class="merchandise-content">
+                <h3>Cardinal Crown Logo 22 Hoodie</h3>
+                <p>DTFlex Graphic Pullover - Photography Graphic Design</p>
+                <div class="merchandise-price">$44.99</div>
+                <a href="https://quintonstoctonphotography.com/products/quinton-stocton-photography-cardinal-crown-logo-22-hoodie-dtflex-graphic-pullover" target="_blank" class="merchandise-link">View Product</a>
+            </div>
+        </div>
+
+        <div class="merchandise-card">
+            <div class="merchandise-image"><i class="fas fa-shirt"></i></div>
+            <div class="merchandise-content">
+                <h3>Graphic Tee - DTFlex Logo</h3>
+                <p>Logo Shirt for Creatives by Quinton Stocton Photography</p>
+                <div class="merchandise-price">From $24.99</div>
+                <a href="https://quintonstoctonphotography.com/products/unisex-t-shirt-qsp-gradient-design" target="_blank" class="merchandise-link">View Product</a>
+            </div>
+        </div>
+
+        <div class="merchandise-card">
+            <div class="merchandise-image"><i class="fas fa-hat-cowboy"></i></div>
+            <div class="merchandise-content">
+                <h3>DTFlex Logo Hat</h3>
+                <p>Adjustable Cotton Twill Cap for Photographers</p>
+                <div class="merchandise-price">$27.50</div>
+                <a href="https://quintonstoctonphotography.com/products/qsp-hat" target="_blank" class="merchandise-link">View Product</a>
+            </div>
+        </div>
+
+        <div class="merchandise-card">
+            <div class="merchandise-image"><i class="fas fa-mug-hot"></i></div>
+            <div class="merchandise-content">
+                <h3>QSP Custom Mug</h3>
+                <p>Ceramic mug with exclusive QSP designs and photography</p>
+                <div class="merchandise-price">From $19.99</div>
+                <a href="https://quintonstoctonphotography.com/collections/qsp-merchandise" target="_blank" class="merchandise-link">View Product</a>
+            </div>
+        </div>
+
+        <div class="merchandise-card">
+            <div class="merchandise-image"><i class="fas fa-book"></i></div>
+            <div class="merchandise-content">
+                <h3>Photography Print Collection</h3>
+                <p>Limited edition fine art prints from recent shoots</p>
+                <div class="merchandise-price">From $34.99</div>
+                <a href="https://quintonstoctonphotography.com/collections/qsp-merchandise" target="_blank" class="merchandise-link">View Product</a>
+            </div>
+        </div>
+
+        <div class="merchandise-card">
+            <div class="merchandise-image"><i class="fas fa-ring"></i></div>
+            <div class="merchandise-content">
+                <h3>QSP Branded Accessories</h3>
+                <p>Keychains, pins, and exclusive branded accessories</p>
+                <div class="merchandise-price">From $9.99</div>
+                <a href="https://quintonstoctonphotography.com/collections/qsp-merchandise" target="_blank" class="merchandise-link">View Product</a>
+            </div>
+        </div>
+
+        <div class="merchandise-card">
+            <div class="merchandise-image"><i class="fas fa-image"></i></div>
+            <div class="merchandise-content">
+                <h3>Canvas Art Prints</h3>
+                <p>High-quality canvas prints of signature photography works</p>
+                <div class="merchandise-price">From $49.99</div>
+                <a href="https://quintonstoctonphotography.com/collections/qsp-merchandise" target="_blank" class="merchandise-link">View Product</a>
+            </div>
+        </div>
+
+        <div class="merchandise-card">
+            <div class="merchandise-image"><i class="fas fa-swatchbook"></i></div>
+            <div class="merchandise-content">
+                <h3>Portfolio Album</h3>
+                <p>Premium photo album showcasing QSP portfolio highlights</p>
+                <div class="merchandise-price">From $59.99</div>
+                <a href="https://quintonstoctonphotography.com/collections/qsp-merchandise" target="_blank" class="merchandise-link">View Product</a>
+            </div>
+        </div>
+
+        <div class="merchandise-card">
+            <div class="merchandise-image"><i class="fas fa-phone"></i></div>
+            <div class="merchandise-content">
+                <h3>Phone Cases - Custom Design</h3>
+                <p>Protective phone cases with QSP exclusive artwork</p>
+                <div class="merchandise-price">From $18.99</div>
+                <a href="https://quintonstoctonphotography.com/collections/qsp-merchandise" target="_blank" class="merchandise-link">View Product</a>
+            </div>
+        </div>
+
+        <div class="merchandise-card">
+            <div class="merchandise-image"><i class="fas fa-bookmark"></i></div>
+            <div class="merchandise-content">
+                <h3>Branded Sticker Pack</h3>
+                <p>Set of unique stickers featuring QSP brand designs</p>
+                <div class="merchandise-price">$9.99</div>
+                <a href="https://quintonstoctonphotography.com/collections/qsp-merchandise" target="_blank" class="merchandise-link">View Product</a>
+            </div>
+        </div>
+
+        <div class="merchandise-card">
+            <div class="merchandise-image"><i class="fas fa-pencil-alt"></i></div>
+            <div class="merchandise-content">
+                <h3>QSP Branded Notebooks</h3>
+                <p>Premium journals and notebooks with QSP branding</p>
+                <div class="merchandise-price">From $12.99</div>
+                <a href="https://quintonstoctonphotography.com/collections/qsp-merchandise" target="_blank" class="merchandise-link">View Product</a>
+            </div>
+        </div>
+
+        <div class="merchandise-card">
+            <div class="merchandise-image"><i class="fas fa-water"></i></div>
+            <div class="merchandise-content">
+                <h3>Insulated Water Bottle</h3>
+                <p>Durable water bottle with QSP logo and design</p>
+                <div class="merchandise-price">$29.99</div>
+                <a href="https://quintonstoctonphotography.com/collections/qsp-merchandise" target="_blank" class="merchandise-link">View Product</a>
+            </div>
+        </div>
+
+        <div class="merchandise-card">
+            <div class="merchandise-image"><i class="fas fa-dumbbell"></i></div>
+            <div class="merchandise-content">
+                <h3>Performance Athletic Wear</h3>
+                <p>Moisture-wicking athletic apparel with QSP branding</p>
+                <div class="merchandise-price">From $34.99</div>
+                <a href="https://quintonstoctonphotography.com/collections/qsp-merchandise" target="_blank" class="merchandise-link">View Product</a>
+            </div>
+        </div>
+
+        <div class="merchandise-card">
+            <div class="merchandise-image"><i class="fas fa-camera"></i></div>
+            <div class="merchandise-content">
+                <h3>Photography Guide & Ebook</h3>
+                <p>Exclusive guide to composition and creative photography</p>
+                <div class="merchandise-price">$14.99</div>
+                <a href="https://quintonstoctonphotography.com/collections/qsp-merchandise" target="_blank" class="merchandise-link">View Product</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <span class="white">Quinton Stocton</span>
+            <span class="red">Photography</span>
+        </div>
+        <p style="color: #E5E0E0; margin-bottom: 1rem;">Capturing Moments, Crafting Memories; Preserving The Essence Of You.</p>
+        
+        <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="index.html#collections">Collections</a>
+            <a href="index.html#services">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="index.html#reviews">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="social-icons" id="social">
+            <a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a>
+            <a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a>
+        </div>
+
+        <div class="footer-info">
+            <p>Based in Glasgow, Kentucky</p>
+            <p>© 2025 Quinton Stocton Photography. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

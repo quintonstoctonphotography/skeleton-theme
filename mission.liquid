@@ -1,0 +1,333 @@
+{% comment %}
+  OUR MISSION PAGE TEMPLATE
+  Shopify Liquid template for mission page
+  Displays company mission and values
+{% endcomment %}
+
+<!-- Hero Mission Section -->
+<section class="mission-hero" data-section-id="{{ section.id }}" data-section-type="mission-hero">
+  <div class="mission-hero__inner">
+    <h1 class="mission-hero__title">
+      <span class="mission-hero__text--primary">OUR</span> 
+      <span class="mission-hero__text--accent">MISSION</span>
+    </h1>
+    <p class="mission-hero__subtitle">Helping people and brands stand out since 2017 through visual storytelling.</p>
+  </div>
+</section>
+
+<!-- Mission Content Section -->
+<section class="mission-content" data-section-id="{{ section.id }}" data-section-type="mission-content">
+  <div class="mission-content__inner">
+    <h2 class="mission-content__heading">Why I Do What I Do</h2>
+    
+    <p class="mission-content__text">
+      Every brand has a story. Every person has a moment worth remembering. My mission is simple: To bring those stories to life through design and photography that connect, inspire, and convert.
+    </p>
+
+    <div class="mission-content__box">
+      <h3 class="mission-content__box-title">
+        My brand stands on one simple truth: all it takes is one photo or one good design and it can literally change the way you feel about life.
+      </h3>
+      <ul class="mission-content__list">
+        <li>Capturing genuine emotion that tells your story.</li>
+        <li>Delivering luxury quality results with small-town care.</li>
+        <li>Building a platform that inspires, uplifts, and connects.</li>
+      </ul>
+    </div>
+
+    <p class="mission-content__statement">
+      I believe in helping people feel seen, valued, and proud of their moments. Every shoot, every edit, every click is done with the intention to preserve your legacy and ignite your confidence. A portion of my support also goes toward local charities, because success means more when it's shared.
+    </p>
+  </div>
+</section>
+
+<!-- Values Section -->
+<section class="values-section" data-section-id="{{ section.id }}" data-section-type="values">
+  <div class="values-section__inner">
+    <h2 class="values-section__title">
+      <span class="values-section__text--primary">Our</span> 
+      <span class="values-section__text--accent">Values</span>
+    </h2>
+    
+    <div class="values-grid" role="list">
+      <div class="value-card" role="listitem">
+        <h3 class="value-card__title">Artistic Excellence</h3>
+        <p class="value-card__description">
+          We don't just take photos – we craft visual stories that capture emotion, preserve memories, and create lasting impact. Every frame is intentional, every edit is purposeful.
+        </p>
+      </div>
+
+      <div class="value-card" role="listitem">
+        <h3 class="value-card__title">Client-Centered</h3>
+        <p class="value-card__description">
+          Your vision is our priority. We listen, collaborate, and deliver work that exceeds expectations. From the first consultation to final delivery, you're at the center of everything we do.
+        </p>
+      </div>
+
+      <div class="value-card" role="listitem">
+        <h3 class="value-card__title">Story-Driven</h3>
+        <p class="value-card__description">
+          Every person, every brand, every moment has a unique story. We specialize in revealing what makes you authentically you, creating imagery that connects and resonates.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="mission-cta" data-section-id="{{ section.id }}" data-section-type="mission-cta">
+  <div class="mission-cta__inner">
+    <h2 class="mission-cta__title">
+      <span class="mission-cta__text--primary">{{ shop.name | split: ' ' | first }}</span> 
+      <span class="mission-cta__text--accent">{{ shop.name | split: ' ' | last }}</span>
+    </h2>
+    <p class="mission-cta__description">Ready to tell your story?</p>
+    <a href="/pages/contact" class="button button--primary button--large">Get Started Today</a>
+  </div>
+</section>
+
+<style>
+  .mission-hero {
+    margin-top: 80px;
+    padding: 5rem 2rem 3rem;
+    text-align: center;
+    background: radial-gradient(ellipse at center, var(--color-base-primary) 0%, var(--color-base-background) 70%);
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mission-hero__inner {
+    max-width: 900px;
+  }
+
+  .mission-hero__title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .mission-hero__text--accent {
+    color: var(--color-base-primary);
+  }
+
+  .mission-hero__subtitle {
+    font-size: 1.2rem;
+    color: #E5E0E0;
+  }
+
+  .mission-content {
+    padding: 5rem 2rem;
+    background: #000;
+  }
+
+  .mission-content__inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .mission-content__heading {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .mission-content__text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #E5E0E0;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .mission-content__box {
+    background: #1a1a1a;
+    border: 2px solid var(--color-base-primary);
+    border-radius: 10px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .mission-content__box-title {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+  }
+
+  .mission-content__list {
+    list-style: none;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .mission-content__list li {
+    margin-bottom: 1rem;
+    color: #E5E0E0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1rem;
+  }
+
+  .mission-content__list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-base-primary);
+    font-weight: 700;
+  }
+
+  .mission-content__statement {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #E5E0E0;
+    font-style: italic;
+    text-align: center;
+    opacity: 0.9;
+  }
+
+  .values-section {
+    padding: 5rem 2rem;
+    background: #0a0a0a;
+  }
+
+  .values-section__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .values-section__title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #fff;
+  }
+
+  .values-section__text--accent {
+    color: var(--color-base-primary);
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .value-card {
+    background: #1a1a1a;
+    border: 2px solid var(--color-base-primary);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(186, 6, 6, 0.3);
+  }
+
+  .value-card__title {
+    font-size: 1.3rem;
+    color: var(--color-base-primary);
+    margin-bottom: 1rem;
+  }
+
+  .value-card__description {
+    font-size: 0.95rem;
+    color: #E5E0E0;
+    line-height: 1.6;
+  }
+
+  .mission-cta {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: #000;
+    border-top: 2px solid var(--color-base-primary);
+  }
+
+  .mission-cta__inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .mission-cta__title {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .mission-cta__text--accent {
+    color: var(--color-base-primary);
+  }
+
+  .mission-cta__description {
+    font-size: 1.2rem;
+    color: #E5E0E0;
+    margin-bottom: 2rem;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background: var(--color-base-primary);
+    color: #fff;
+    border: 2px solid var(--color-base-primary);
+    border-radius: 5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+
+  .button:hover {
+    background: #8B0000;
+    border-color: #8B0000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(186, 6, 6, 0.4);
+  }
+
+  .button--large {
+    padding: 1.2rem 3rem;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .mission-hero {
+      margin-top: 60px;
+      padding: 3rem 1.5rem;
+      min-height: 250px;
+    }
+
+    .mission-hero__title {
+      font-size: 2rem;
+    }
+
+    .mission-content,
+    .values-section,
+    .mission-cta {
+      padding: 3rem 1.5rem;
+    }
+
+    .mission-content__heading,
+    .values-section__title,
+    .mission-cta__title {
+      font-size: 1.75rem;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .button {
+      width: 100%;
+    }
+  }
+</style>

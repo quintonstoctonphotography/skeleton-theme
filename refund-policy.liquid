@@ -1,0 +1,139 @@
+{% comment %}
+  REFUND POLICY PAGE TEMPLATE
+  Shopify Liquid template for refund policy
+  Displays refund and return policy information
+{% endcomment %}
+
+<!-- Policy Container -->
+<section class="policy-page" data-section-id="{{ section.id }}" data-section-type="policy">
+  <div class="policy-page__inner">
+    <div class="policy-header">
+      <h1 class="policy-header__title">Refund Policy</h1>
+    </div>
+
+    <div class="policy-content">
+      <h2>For Print-On-Demand Products</h2>
+
+      <p>
+        Print-on-demand products are unique and produced only once ordered. Returns and exchanges are not supported if you ordered the wrong size, color, or changed your mind.
+      </p>
+
+      <p>
+        However, in case of a damaged product or manufacturing error, we offer a free reprint or refund if you contact us within 30 days of product delivery. Please provide a clear photo showing the issue.
+      </p>
+
+      <h2>Non-Returnable Items</h2>
+
+      <p>Certain types of items cannot be returned, including:</p>
+      <ul>
+        <li>Perishable goods</li>
+        <li>Custom or personalized items</li>
+        <li>Personal care goods</li>
+        <li>Hazardous materials</li>
+        <li>Sale items or gift cards</li>
+      </ul>
+
+      <h2>Exchanges</h2>
+
+      <p>
+        The fastest way to exchange an item is to return it, and once accepted, make a separate purchase for the new item.
+      </p>
+
+      <h2>European Union 14-Day Cooling Off Period</h2>
+
+      <p>
+        If merchandise is being shipped into the European Union, you have the right to cancel or return your order within 14 days for any reason. Your item must be in the same condition as received, unworn, unused, with tags, and in original packaging.
+      </p>
+
+      <h2>Contact Us for Issues</h2>
+
+      <p>
+        To report a problem with your order, please contact us at:<br>
+        Email: customersupport@quintonstoctonphotography.com<br>
+        Phone: +1 (270) 283-7950
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .policy-page {
+    margin-top: 80px;
+    padding: 5rem 2rem;
+    background: #000;
+  }
+
+  .policy-page__inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .policy-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--color-base-primary);
+  }
+
+  .policy-header__title {
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 0 0 0.5rem;
+  }
+
+  .policy-header__date {
+    color: var(--color-base-primary);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .policy-content {
+    color: #E5E0E0;
+    line-height: 1.8;
+  }
+
+  .policy-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .policy-content h2 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 2rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-base-border);
+  }
+
+  .policy-content ul {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+  }
+
+  .policy-content li {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  .policy-content strong {
+    color: var(--color-base-primary);
+  }
+
+  @media (max-width: 768px) {
+    .policy-page {
+      margin-top: 60px;
+      padding: 3rem 1.5rem;
+    }
+
+    .policy-header__title {
+      font-size: 1.75rem;
+    }
+
+    .policy-content h2 {
+      font-size: 1.25rem;
+    }
+
+    .policy-content {
+      font-size: 0.95rem;
+    }
+  }
+</style>

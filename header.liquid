@@ -1,0 +1,24 @@
+{% comment %}
+  Header snippet - renders navigation and branding
+  Customizable via theme settings
+{% endcomment %}
+
+<header class="header" role="banner">
+  <div class="header__inner">
+    <div class="header__branding">
+      <a href="{{ routes.root_url }}" class="logo">
+        <span class="logo__text logo__text--primary">{{ shop.name | split: ' ' | first }}</span>
+        <span class="logo__text logo__text--accent">{{ shop.name | split: ' ' | last }}</span>
+      </a>
+    </div>
+    
+    <nav class="header__nav" role="navigation" aria-label="Main Menu">
+      <ul class="nav-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/pages/about">About</a></li>
+        <li><a href="/pages/services">Services</a></li>
+        <li><a href="/pages/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

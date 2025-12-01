@@ -1,0 +1,361 @@
+{% comment %}
+  AFFILIATE PAGE TEMPLATE
+  Shopify Liquid template for affiliate marketing program
+  Displays affiliate recommendations and resources
+{% endcomment %}
+
+<!-- Hero Section -->
+<section class="affiliate-hero" data-section-id="{{ section.id }}" data-section-type="affiliate-hero">
+  <div class="affiliate-hero__inner">
+    <h1 class="affiliate-hero__title">
+      <span class="affiliate-hero__text--accent">Plugged-In Affiliations</span> 
+      <span class="affiliate-hero__text--primary">Successful Affiliate Marketing</span>
+    </h1>
+    <p class="affiliate-hero__subtitle">Model</p>
+    <p class="affiliate-hero__description">
+      Your gateway to unlimited wealth, wealth that can be from anywhere and everywhere. It all depends on the amount of work you put into it. If you're a hard worker and hustle every day, this is the blueprint to make it happen.
+    </p>
+  </div>
+</section>
+
+<!-- Featured Recommendations -->
+<section class="featured-carousel" data-section-id="{{ section.id }}" data-section-type="featured-affiliates">
+  <div class="featured-carousel__inner">
+    <h2 class="featured-carousel__title">
+      <span class="featured-carousel__text--primary">Top</span> 
+      <span class="featured-carousel__text--accent">Recommendations</span>
+    </h2>
+    
+    <div class="carousel-container" role="list">
+      <div class="featured-card" role="listitem">
+        <div class="featured-badge">RECOMMENDED</div>
+        <h3 class="featured-card__title">Headspace</h3>
+        <p class="featured-card__description">Sign up for Headspace today and get a 14 day free trial!</p>
+        <a href="https://headspace.com" target="_blank" rel="noopener" class="button button--primary">Try Now</a>
+      </div>
+
+      <div class="featured-card" role="listitem">
+        <div class="featured-badge featured-badge--trending">TRENDING</div>
+        <h3 class="featured-card__title">TikTok Ads</h3>
+        <p class="featured-card__description">Advertise on TikTok & earn up to $6,000 in credits</p>
+        <a href="https://tiktok.com/business" target="_blank" rel="noopener" class="button button--primary">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Affiliate Links Groups -->
+<section class="affiliate-groups" data-section-id="{{ section.id }}" data-section-type="affiliate-links">
+  <div class="affiliate-groups__inner">
+    <!-- Creative Tools -->
+    <div class="group-section">
+      <h2 class="group-section__title">Creative Tools</h2>
+      <div class="affiliate-grid" role="list">
+        <a href="https://adobe.com" target="_blank" rel="noopener" class="affiliate-card" role="listitem">
+          <div class="affiliate-card__icon">
+            <i class="fab fa-adobe" aria-hidden="true"></i>
+          </div>
+          <div class="affiliate-card__content">
+            <h3 class="affiliate-card__title">Adobe Creative Cloud</h3>
+            <p class="affiliate-card__description">Professional design and video editing</p>
+            <span class="affiliate-tag">Creator</span>
+          </div>
+        </a>
+
+        <a href="https://canva.com" target="_blank" rel="noopener" class="affiliate-card" role="listitem">
+          <div class="affiliate-card__icon">
+            <i class="fas fa-palette" aria-hidden="true"></i>
+          </div>
+          <div class="affiliate-card__content">
+            <h3 class="affiliate-card__title">Canva Pro</h3>
+            <p class="affiliate-card__description">Easy design for everyone</p>
+            <span class="affiliate-tag">Designer</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Business & Marketing -->
+    <div class="group-section">
+      <h2 class="group-section__title">Business & Marketing</h2>
+      <div class="affiliate-grid" role="list">
+        <a href="https://mailchimp.com" target="_blank" rel="noopener" class="affiliate-card" role="listitem">
+          <div class="affiliate-card__icon">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </div>
+          <div class="affiliate-card__content">
+            <h3 class="affiliate-card__title">Mailchimp</h3>
+            <p class="affiliate-card__description">Email marketing platform</p>
+            <span class="affiliate-tag">Marketing</span>
+          </div>
+        </a>
+
+        <a href="https://buffer.com" target="_blank" rel="noopener" class="affiliate-card" role="listitem">
+          <div class="affiliate-card__icon">
+            <i class="fab fa-twitter" aria-hidden="true"></i>
+          </div>
+          <div class="affiliate-card__content">
+            <h3 class="affiliate-card__title">Buffer</h3>
+            <p class="affiliate-card__description">Social media management</p>
+            <span class="affiliate-tag">Social</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .affiliate-hero {
+    margin-top: 80px;
+    padding: 5rem 2rem 3rem;
+    text-align: center;
+    background: radial-gradient(ellipse at center, var(--color-base-primary) 0%, var(--color-base-background) 70%);
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .affiliate-hero__inner {
+    max-width: 900px;
+  }
+
+  .affiliate-hero__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .affiliate-hero__text--accent {
+    color: var(--color-base-primary);
+  }
+
+  .affiliate-hero__subtitle {
+    font-size: 1.1rem;
+    color: #E5E0E0;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .affiliate-hero__description {
+    font-size: 1rem;
+    color: #E5E0E0;
+    line-height: 1.6;
+    margin: 1rem auto 0;
+    max-width: 700px;
+  }
+
+  .featured-carousel {
+    padding: 5rem 2rem;
+    background: #000;
+  }
+
+  .featured-carousel__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .featured-carousel__title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #fff;
+  }
+
+  .featured-carousel__text--accent {
+    color: var(--color-base-primary);
+  }
+
+  .carousel-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+    list-style: none;
+  }
+
+  .featured-card {
+    background: #1a1a1a;
+    border: 2px solid var(--color-base-primary);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  .featured-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(186, 6, 6, 0.3);
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-base-primary);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  .featured-badge--trending {
+    background: #8B0000;
+  }
+
+  .featured-card__title {
+    font-size: 1.4rem;
+    color: #fff;
+    margin: 1rem 0 1rem;
+  }
+
+  .featured-card__description {
+    color: #E5E0E0;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .affiliate-groups {
+    padding: 5rem 2rem;
+    background: #0a0a0a;
+  }
+
+  .affiliate-groups__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .group-section {
+    margin-bottom: 4rem;
+  }
+
+  .group-section__title {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--color-base-primary);
+    padding-bottom: 1rem;
+  }
+
+  .affiliate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .affiliate-card {
+    background: #1a1a1a;
+    border: 2px solid var(--color-base-border);
+    border-radius: 10px;
+    padding: 2rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .affiliate-card:hover {
+    border-color: var(--color-base-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(186, 6, 6, 0.2);
+  }
+
+  .affiliate-card__icon {
+    font-size: 2.5rem;
+    color: var(--color-base-primary);
+    flex-shrink: 0;
+  }
+
+  .affiliate-card__content {
+    flex: 1;
+  }
+
+  .affiliate-card__title {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0 0 0.5rem;
+  }
+
+  .affiliate-card__description {
+    color: #E5E0E0;
+    font-size: 0.95rem;
+    margin: 0 0 1rem;
+  }
+
+  .affiliate-tag {
+    display: inline-block;
+    background: var(--color-base-primary);
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background: var(--color-base-primary);
+    color: #fff;
+    border: 2px solid var(--color-base-primary);
+    border-radius: 5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+
+  .button:hover {
+    background: #8B0000;
+    border-color: #8B0000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(186, 6, 6, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    .affiliate-hero {
+      margin-top: 60px;
+      padding: 3rem 1.5rem;
+      min-height: 250px;
+    }
+
+    .affiliate-hero__title {
+      font-size: 1.75rem;
+    }
+
+    .featured-carousel {
+      padding: 3rem 1.5rem;
+    }
+
+    .affiliate-groups {
+      padding: 3rem 1.5rem;
+    }
+
+    .carousel-container {
+      grid-template-columns: 1fr;
+    }
+
+    .affiliate-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .affiliate-card {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .affiliate-card__icon {
+      margin: 0 auto;
+    }
+  }
+</style>

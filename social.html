@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media | Quinton Stocton Photography</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-social {
+            margin-top: 80px;
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            background: radial-gradient(ellipse at center, #BA0606 0%, #000000 70%);
+        }
+
+        .bio-section {
+            max-width: 600px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+
+        .bio-section h2 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .bio-section h2 .red {
+            color: #BA0606;
+        }
+
+        .bio-section h2 .white {
+            color: #fff;
+        }
+
+        .bio-section p {
+            color: #E5E0E0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            padding: 3rem 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .social-link-card {
+            background: #1a1a1a;
+            border: 2px solid #BA0606;
+            border-radius: 50px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .social-link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(186, 6, 6, 0.5);
+            background: #BA0606;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: #BA0606;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .social-link-card:hover .social-icon {
+            background: #fff;
+        }
+
+        .social-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .social-content h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .social-content p {
+            color: #E5E0E0;
+            font-size: 0.9rem;
+        }
+
+        .quick-links-section {
+            padding: 3rem 2rem;
+            background: #0a0a0a;
+        }
+
+        .quick-links-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #fff;
+        }
+
+        .quick-links-section h2 .red {
+            color: #BA0606;
+        }
+
+        .quick-links-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .quick-link-card {
+            background: #1a1a1a;
+            border: 2px solid #BA0606;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .quick-link-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(186, 6, 6, 0.4);
+        }
+
+        .quick-link-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .quick-link-card h3 {
+            color: #BA0606;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .quick-link-card p {
+            color: #E5E0E0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .social-link-card {
+                padding: 1rem 1.5rem;
+            }
+
+            .quick-links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Drawer Navigation -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <nav class="drawer-nav" id="drawerNav">
+        <div class="drawer-header">
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+            <button class="drawer-close" id="drawerClose">&times;</button>
+        </div>
+        <ul class="drawer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="mission.html">Our Mission</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="affiliate.html">Affiliate Links</a></li>
+            <li><a href="social.html">Social</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="social-icons drawer-social-icons"><a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a><a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a><a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a><a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a><a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a></div>
+    </nav>
+
+    <nav class="nav-header">
+        <div class="nav-left">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="mission.html">Our Mission</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="affiliate.html">Affiliate Links</a></li>
+            <li><a href="social.html" class="active">Social</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section with Bio -->
+    <section class="hero-social">
+        <div class="bio-section">
+            <h2><span class="white">Quinton Stocton</span> <span class="red">Photography</span></h2>
+            <p>Creative Director & Multimedia Marketing Professional | Six years+ of experience building brands, producing high-impact content.</p>
+        </div>
+    </section>
+
+    <!-- Social Links Section -->
+    <section class="social-links">
+        <a href="https://youtube.com/@quintonstoctonphotography" target="_blank" class="social-link-card">
+            <div class="social-icon"><i class="fab fa-youtube"></i></div>
+            <div class="social-content">
+                <h3>YouTube</h3>
+                <p>@QuintonStoctonPhotography</p>
+            </div>
+        </a>
+
+        <a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" class="social-link-card">
+            <div class="social-icon"><i class="fab fa-tiktok"></i></div>
+            <div class="social-content">
+                <h3>TikTok</h3>
+                <p>@quinton.s.photography</p>
+            </div>
+        </a>
+
+        <a href="https://instagram.com/quintonstoctonphotography" target="_blank" class="social-link-card">
+            <div class="social-icon"><i class="fab fa-instagram"></i></div>
+            <div class="social-content">
+                <h3>Instagram</h3>
+                <p>@quintonstoctonphotography</p>
+            </div>
+        </a>
+
+        <a href="https://facebook.com/quintonstoctonphotography" target="_blank" class="social-link-card">
+            <div class="social-icon"><i class="fab fa-facebook-f"></i></div>
+            <div class="social-content">
+                <h3>Facebook</h3>
+                <p>Quinton Stocton Photography</p>
+            </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" class="social-link-card">
+            <div class="social-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div class="social-content">
+                <h3>LinkedIn</h3>
+                <p>Quinton Stocton Photography</p>
+            </div>
+        </a>
+
+        <a href="https://pinterest.com/quintonstoctonphotography" target="_blank" class="social-link-card">
+            <div class="social-icon"><i class="fab fa-pinterest-p"></i></div>
+            <div class="social-content">
+                <h3>Pinterest</h3>
+                <p>@quintonstoctonphotography</p>
+            </div>
+        </a>
+
+        <a href="https://x.com/qsphotographyky" target="_blank" class="social-link-card">
+            <div class="social-icon"><i class="fab fa-x"></i></div>
+            <div class="social-content">
+                <h3>X (Twitter)</h3>
+                <p>@qsphotographyky</p>
+            </div>
+        </a>
+
+        <a href="https://linktr.ee/quintonstoctonphotography" target="_blank" class="social-link-card">
+            <div class="social-icon"><i class="fas fa-link"></i></div>
+            <div class="social-content">
+                <h3>Linktree</h3>
+                <p>All my links in one place</p>
+            </div>
+        </a>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="quick-links-section">
+        <h2><span class="white">Quick</span> <span class="red">Links</span></h2>
+        <div class="quick-links-grid">
+            <a href="https://quintonstoctonphotography.com/" target="_blank" class="quick-link-card">
+                <div class="quick-link-icon"><i class="fas fa-globe"></i></div>
+                <h3>Main Website</h3>
+                <p>Visit my portfolio</p>
+            </a>
+
+            <a href="https://quintonstoctonphotography.my.canva.site/quinton-stocton-photography-website" target="_blank" class="quick-link-card">
+                <div class="quick-link-icon"><i class="fas fa-palette"></i></div>
+                <h3>Canva Site</h3>
+                <p>Explore my Canva portfolio</p>
+            </a>
+
+            <a href="https://invitation.codes/@Billquinto" target="_blank" class="quick-link-card">
+                <div class="quick-link-icon"><i class="fas fa-code"></i></div>
+                <h3>Invitation Codes</h3>
+                <p>Check my referral codes</p>
+            </a>
+
+            <a href="https://referralcodes.com/quintonstocton" target="_blank" class="quick-link-card">
+                <div class="quick-link-icon"><i class="fas fa-share-alt"></i></div>
+                <h3>Referral Codes</h3>
+                <p>Earn with my referrals</p>
+            </a>
+
+            <a href="https://buymeacoffee.com/quintonstoctonphotography" target="_blank" class="quick-link-card">
+                <div class="quick-link-icon"><i class="fas fa-mug-hot"></i></div>
+                <h3>Buy Me a Coffee</h3>
+                <p>Support my work</p>
+            </a>
+
+            <a href="https://donate.stripe.com/8x2dRa4iaeWkbCk9uYcbC00" target="_blank" class="quick-link-card">
+                <div class="quick-link-icon"><i class="fas fa-heart"></i></div>
+                <h3>Donate</h3>
+                <p>Support via Stripe</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <span class="white">Quinton Stocton</span>
+            <span class="red">Photography</span>
+        </div>
+        <p style="color: #E5E0E0; margin-bottom: 1rem;">Capturing Moments, Crafting Memories; Preserving The Essence Of You.</p>
+        
+        <nav class="footer-nav">
+            <div class="footer-nav-column">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="mission.html">Our Mission</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="services.html">Services</a>
+            </div>
+            <div class="footer-nav-column">
+                <a href="reviews.html">Reviews</a>
+                <a href="faq.html">FAQ</a>
+                <a href="affiliate.html">Affiliate Links</a>
+                <a href="social.html">Social</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-nav-column">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="refund.html">Refund Policy</a>
+                <a href="shipping.html">Shipping Policy</a>
+                <a href="cancellation.html">Cancellation Policy</a>
+            </div>
+        </nav>
+
+        <div class="social-icons" id="social">
+            <a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a>
+            <a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a>
+        </div>
+
+        <div class="footer-info">
+            <p>Based in Glasgow, Kentucky</p>
+            <p>© 2025 Quinton Stocton Photography. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

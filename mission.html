@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Mission | Quinton Stocton Photography</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-mission {
+            margin-top: 80px;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(ellipse at center, #BA0606 0%, #000000 70%);
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .hero-mission::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to bottom, #BA0606, transparent);
+            opacity: 0.6;
+        }
+
+        .hero-mission h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            color: #fff;
+        }
+
+        .hero-mission h1 .red {
+            color: #BA0606;
+        }
+
+        .hero-mission p {
+            font-size: 1.3rem;
+            color: #E5E0E0;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        .mission-content {
+            padding: 5rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #000;
+        }
+
+        .section-heading {
+            font-size: 2.5rem;
+            color: #BA0606;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .mission-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #E5E0E0;
+            margin-bottom: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mission-box {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 3rem;
+            border: 2px solid #BA0606;
+            border-radius: 15px;
+            background: rgba(71, 71, 71, 0.1);
+            box-shadow: 0 0 30px rgba(186, 6, 6, 0.3);
+            text-align: center;
+        }
+
+        .mission-box h3 {
+            color: #fff;
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .mission-box ul {
+            list-style: none;
+            text-align: left;
+            margin: 0 auto;
+            max-width: 700px;
+        }
+
+        .mission-box li {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+            color: #E5E0E0;
+            font-size: 1.1rem;
+        }
+
+        .mission-box li:before {
+            content: "✓";
+            color: #BA0606;
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+        }
+
+        .mission-statement {
+            font-style: italic;
+            margin: 3rem auto;
+            max-width: 900px;
+            font-size: 1.15rem;
+            color: #E5E0E0;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .values-section {
+            padding: 5rem 3rem;
+            background: #0a0a0a;
+        }
+
+        .values-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #fff;
+        }
+
+        .values-section h2 .red {
+            color: #BA0606;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .value-card {
+            background: #1a1a1a;
+            padding: 2.5rem;
+            border-radius: 10px;
+            border: 2px solid #BA0606;
+            box-shadow: 0 0 20px rgba(186, 6, 6, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px rgba(186, 6, 6, 0.4);
+        }
+
+        .value-card h3 {
+            color: #BA0606;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            color: #E5E0E0;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .mission-cta {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: radial-gradient(ellipse at center, #BA0606 0%, #000000 70%);
+        }
+
+        .mission-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .mission-cta h2 .white {
+            color: #fff;
+        }
+
+        .mission-cta h2 .red {
+            color: #BA0606;
+        }
+
+        .mission-cta p {
+            font-size: 1.2rem;
+            color: #E5E0E0;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-mission h1 {
+                font-size: 2.5rem;
+            }
+
+            .mission-content {
+                padding: 3rem 2rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-section {
+                padding: 3rem 2rem;
+            }
+
+            .mission-box {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Drawer Navigation -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <nav class="drawer-nav" id="drawerNav">
+        <div class="drawer-header">
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+            <button class="drawer-close" id="drawerClose">&times;</button>
+        </div>
+        <ul class="drawer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="mission.html">Our Mission</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="affiliate.html">Affiliate Links</a></li>
+            <li><a href="social.html">Social</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="social-icons drawer-social-icons">
+            <a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a>
+            <a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a>
+        </div>
+    </nav>
+
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-left">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="mission.html" class="active">Our Mission</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="affiliate.html">Affiliate Links</a></li>
+            <li><a href="social.html">Social</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Mission Section -->
+    <section class="hero-mission">
+        <h1><span class="white">OUR</span> <span class="red">MISSION</span></h1>
+        <p>Helping people and brands stand out since 2017 through visual storytelling.</p>
+    </section>
+
+    <!-- Mission Content Section -->
+    <section class="mission-content">
+        <h2 class="section-heading">Why I Do What I Do</h2>
+        
+        <p class="mission-text">Every brand has a story. Every person has a moment worth remembering. My mission is simple: To bring those stories to life through design and photography that connect, inspire, and convert.</p>
+
+        <div class="mission-box">
+            <h3>My brand stands on one simple truth: all it takes is one photo or one good design and it can literally change the way you feel about life.</h3>
+            <ul>
+                <li>Capturing genuine emotion that tells your story.</li>
+                <li>Delivering luxury quality results with small-town care.</li>
+                <li>Building a platform that inspires, uplifts, and connects.</li>
+            </ul>
+        </div>
+
+        <p class="mission-statement">I believe in helping people feel seen, valued, and proud of their moments. Every shoot, every edit, every click is done with the intention to preserve your legacy and ignite your confidence. A portion of my support also goes toward local charities, because success means more when it's shared.</p>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <h2><span class="white">Our</span> <span class="red">Values</span></h2>
+        
+        <div class="values-grid">
+            <div class="value-card">
+                <h3>Artistic Excellence</h3>
+                <p>We don't just take photos – we craft visual stories that capture emotion, preserve memories, and create lasting impact. Every frame is intentional, every edit is purposeful.</p>
+            </div>
+
+            <div class="value-card">
+                <h3>Client-Centered</h3>
+                <p>Your vision is our priority. We listen, collaborate, and deliver work that exceeds expectations. From the first consultation to final delivery, you're at the center of everything we do.</p>
+            </div>
+
+            <div class="value-card">
+                <h3>Story-Driven</h3>
+                <p>Every person, every brand, every moment has a unique story. We specialize in revealing what makes you authentically you, creating imagery that connects and resonates.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="mission-cta">
+        <h2><span class="white">Quinton Stocton</span> <span class="red">Photography</span></h2>
+        <p>Ready to tell your story?</p>
+        <a href="contact.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.2rem 3rem;">Get Started Today</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <span class="white">Quinton Stocton</span>
+            <span class="red">Photography</span>
+        </div>
+        <p style="color: #E5E0E0; margin-bottom: 1rem;">Capturing Moments, Crafting Memories; Preserving The Essence Of You.</p>
+        
+        <nav class="footer-nav">
+            <div class="footer-nav-column">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="mission.html">Our Mission</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="services.html">Services</a>
+            </div>
+            <div class="footer-nav-column">
+                <a href="reviews.html">Reviews</a>
+                <a href="faq.html">FAQ</a>
+                <a href="affiliate.html">Affiliate Links</a>
+                <a href="social.html">Social</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-nav-column">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="refund.html">Refund Policy</a>
+                <a href="shipping.html">Shipping Policy</a>
+                <a href="cancellation.html">Cancellation Policy</a>
+            </div>
+        </nav>
+
+        <div class="social-icons" id="social">
+            <a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a>
+            <a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a>
+        </div>
+
+        <div class="footer-info">
+            <p>Based in Glasgow, Kentucky</p>
+            <p>© 2025 Quinton Stocton Photography. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

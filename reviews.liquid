@@ -1,0 +1,414 @@
+{% comment %}
+  REVIEWS/TESTIMONIALS PAGE TEMPLATE
+  Shopify Liquid template for reviews page
+  Displays client testimonials and review submission form
+{% endcomment %}
+
+<!-- Hero Section -->
+<section class="reviews-hero" data-section-id="{{ section.id }}" data-section-type="reviews-hero">
+  <div class="reviews-hero__inner">
+    <h1 class="reviews-hero__title">
+      <span class="reviews-hero__text--primary">Behind Every Image</span> 
+      <span class="reviews-hero__text--accent">Is a Story Worth Telling.</span>
+    </h1>
+    <p class="reviews-hero__subtitle">TESTIMONIALS FROM SATISFIED CLIENTS</p>
+    <p class="reviews-hero__description">
+      These are the voices of people and brands who trusted their vision with me. Their stories inspire me to create work that matters.
+    </p>
+  </div>
+</section>
+
+<!-- Reviews Section -->
+<section class="reviews-container" data-section-id="{{ section.id }}" data-section-type="reviews-testimonials">
+  <div class="reviews-container__inner" role="region" aria-label="Client Testimonials">
+    <div class="review-box">
+      <div class="review-box__tags" role="list">
+        <span class="review-tag" role="listitem">Wedding</span>
+        <span class="review-tag" role="listitem">Photography</span>
+      </div>
+      <p class="review-box__text">
+        "Quinton captured our entire wedding day beautifully. The candid moments were authentic, the posed shots were elegant, and we absolutely love how timeless everything looks. We recommend Quinton to anyone looking for a photographer who genuinely cares about their story."
+      </p>
+      <p class="review-box__author">- Sarah & Michael, Wedding Couple</p>
+    </div>
+
+    <div class="review-box">
+      <div class="review-box__tags" role="list">
+        <span class="review-tag" role="listitem">Branding</span>
+        <span class="review-tag" role="listitem">Logo Design</span>
+      </div>
+      <p class="review-box__text">
+        "Working with Quinton on our brand identity was an absolute game-changer. The logo perfectly captures who we are as a company, and the entire branding package is cohesive and professional. Highly recommended!"
+      </p>
+      <p class="review-box__author">- James Chen, Small Business Owner</p>
+    </div>
+
+    <div class="review-box">
+      <div class="review-box__tags" role="list">
+        <span class="review-tag" role="listitem">Portrait</span>
+        <span class="review-tag" role="listitem">Photography</span>
+      </div>
+      <p class="review-box__text">
+        "My professional headshots from Quinton are incredible. He made me feel comfortable in front of the camera and delivered images that truly represent who I am. These photos have made a real difference in my professional presence."
+      </p>
+      <p class="review-box__author">- Maria Rodriguez, Entrepreneur</p>
+    </div>
+
+    <div class="review-box">
+      <div class="review-box__tags" role="list">
+        <span class="review-tag" role="listitem">Event</span>
+        <span class="review-tag" role="listitem">Photography</span>
+      </div>
+      <p class="review-box__text">
+        "Quinton photographed our company's annual gala and the coverage was exceptional. From the setup to the dancing, he captured all the important moments while staying unobtrusive. The photos are professional, well-edited, and tell the story of our event perfectly."
+      </p>
+      <p class="review-box__author">- David Thompson, Event Coordinator</p>
+    </div>
+  </div>
+</section>
+
+<!-- Review Form Section -->
+<section class="review-form-section" data-section-id="{{ section.id }}" data-section-type="reviews-form">
+  <div class="review-form-container">
+    <h2 class="review-form__heading">
+      Share <span class="review-form__accent">Your Story</span>
+    </h2>
+    <p class="review-form__description">
+      Have you worked with us? We'd love to hear about your experience!
+    </p>
+
+    <form class="review-form" id="reviewForm" method="POST" novalidate>
+      <div class="form-group">
+        <label for="review-name" class="form-label">Your Name <span aria-label="required">*</span></label>
+        <input type="text" id="review-name" name="name" class="form-input" required>
+      </div>
+
+      <div class="form-group">
+        <label for="review-email" class="form-label">Your Email <span aria-label="required">*</span></label>
+        <input type="email" id="review-email" name="email" class="form-input" required>
+      </div>
+
+      <div class="form-group">
+        <label for="review-service" class="form-label">Service Type <span aria-label="required">*</span></label>
+        <input type="text" id="review-service" name="service" class="form-input" placeholder="e.g., Wedding Photography, Branding" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Rating <span aria-label="required">*</span></label>
+        <div class="star-rating" id="starRating" role="radiogroup" aria-label="Review Rating">
+          <button type="button" class="star-button" data-value="1" aria-label="1 star">⭐</button>
+          <button type="button" class="star-button" data-value="2" aria-label="2 stars">⭐</button>
+          <button type="button" class="star-button" data-value="3" aria-label="3 stars">⭐</button>
+          <button type="button" class="star-button" data-value="4" aria-label="4 stars">⭐</button>
+          <button type="button" class="star-button" data-value="5" aria-label="5 stars">⭐</button>
+        </div>
+        <input type="hidden" id="review-rating" name="rating" value="0">
+      </div>
+
+      <div class="form-group">
+        <label for="review-text" class="form-label">Your Review <span aria-label="required">*</span></label>
+        <textarea id="review-text" name="review" class="form-textarea" placeholder="Share your experience..." required></textarea>
+      </div>
+
+      <button type="submit" class="button button--primary button--large">Submit Review</button>
+    </form>
+  </div>
+</section>
+
+<style>
+  .reviews-hero {
+    margin-top: 80px;
+    padding: 5rem 2rem 3rem;
+    text-align: center;
+    background: radial-gradient(ellipse at center, var(--color-base-primary) 0%, var(--color-base-background) 70%);
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .reviews-hero__inner {
+    max-width: 900px;
+  }
+
+  .reviews-hero__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .reviews-hero__text--accent {
+    color: var(--color-base-primary);
+  }
+
+  .reviews-hero__subtitle {
+    font-size: 1.1rem;
+    color: #E5E0E0;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+
+  .reviews-hero__description {
+    font-size: 1rem;
+    color: #E5E0E0;
+    line-height: 1.6;
+  }
+
+  .reviews-container {
+    padding: 5rem 2rem;
+    background: #000;
+  }
+
+  .reviews-container__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .review-box {
+    background: #1a1a1a;
+    border: 2px solid var(--color-base-primary);
+    border-radius: 10px;
+    padding: 2.5rem;
+    transition: all 0.3s;
+  }
+
+  .review-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(186, 6, 6, 0.4);
+  }
+
+  .review-box__tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+
+  .review-tag {
+    background: var(--color-base-primary);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .review-box__text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #E5E0E0;
+    margin-bottom: 1.5rem;
+  }
+
+  .review-box__author {
+    color: var(--color-base-primary);
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .review-form-section {
+    padding: 5rem 2rem;
+    background: #0a0a0a;
+  }
+
+  .review-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .review-form__heading {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .review-form__accent {
+    color: var(--color-base-primary);
+  }
+
+  .review-form__description {
+    text-align: center;
+    color: #E5E0E0;
+    margin-bottom: 3rem;
+  }
+
+  .review-form {
+    background: #1a1a1a;
+    border: 2px solid var(--color-base-primary);
+    border-radius: 10px;
+    padding: 3rem;
+  }
+
+  .form-group {
+    margin-bottom: 2rem;
+  }
+
+  .form-label {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: #000;
+    border: 1px solid var(--color-base-border);
+    border-radius: 5px;
+    color: #E5E0E0;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+
+  .form-input:focus,
+  .form-textarea:focus {
+    outline: none;
+    border-color: var(--color-base-primary);
+    box-shadow: 0 0 0 3px rgba(186, 6, 6, 0.1);
+  }
+
+  .form-textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .star-rating {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .star-button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: opacity 0.3s;
+    padding: 0.25rem;
+  }
+
+  .star-button:hover,
+  .star-button.active {
+    opacity: 1;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background: var(--color-base-primary);
+    color: #fff;
+    border: 2px solid var(--color-base-primary);
+    border-radius: 5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+
+  .button:hover {
+    background: #8B0000;
+    border-color: #8B0000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(186, 6, 6, 0.4);
+  }
+
+  .button--large {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .reviews-hero {
+      margin-top: 60px;
+      padding: 3rem 1.5rem;
+      min-height: 300px;
+    }
+
+    .reviews-hero__title {
+      font-size: 1.75rem;
+    }
+
+    .reviews-container {
+      padding: 3rem 1.5rem;
+    }
+
+    .reviews-container__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .review-form-section {
+      padding: 3rem 1.5rem;
+    }
+
+    .review-form {
+      padding: 2rem;
+    }
+
+    .review-form__heading {
+      font-size: 1.75rem;
+    }
+
+    .button--large {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    'use strict';
+
+    const starButtons = document.querySelectorAll('.star-button');
+    const ratingInput = document.getElementById('review-rating');
+    const reviewForm = document.getElementById('reviewForm');
+
+    // Star rating functionality
+    starButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const value = button.dataset.value;
+        ratingInput.value = value;
+
+        starButtons.forEach(btn => {
+          btn.classList.remove('active');
+        });
+
+        for (let i = 0; i < value; i++) {
+          starButtons[i].classList.add('active');
+        }
+      });
+    });
+
+    // Form submission
+    if (reviewForm) {
+      reviewForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (ratingInput.value === '0') {
+          alert('Please select a rating');
+          return;
+        }
+        // In a real implementation, you would send this data to your backend
+        alert('Thank you for your review! We\'ll moderate it and display it soon.');
+        reviewForm.reset();
+        starButtons.forEach(btn => btn.classList.remove('active'));
+        ratingInput.value = '0';
+      });
+    }
+  })();
+</script>

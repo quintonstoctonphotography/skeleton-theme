@@ -1,0 +1,149 @@
+[
+  {
+    "name": "Theme Settings",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Brand & Colors"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary Color (Red)",
+        "default": "#BA0606"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "label": "Secondary Color",
+        "default": "#8B0000"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text Color",
+        "default": "#E5E0E0"
+      },
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background Color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "color_border",
+        "label": "Border Color",
+        "default": "#474747"
+      },
+      {
+        "type": "header",
+        "content": "Typography"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_body_font",
+        "label": "Body Font",
+        "default": "system"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_heading_font",
+        "label": "Heading Font",
+        "default": "system"
+      },
+      {
+        "type": "header",
+        "content": "Spacing"
+      },
+      {
+        "type": "range",
+        "id": "spacing_unit",
+        "min": 4,
+        "max": 16,
+        "step": 1,
+        "unit": "px",
+        "label": "Base Spacing Unit",
+        "default": 8
+      },
+      {
+        "type": "header",
+        "content": "Media"
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      },
+      {
+        "type": "header",
+        "content": "Contact Info"
+      },
+      {
+        "type": "text",
+        "id": "contact_phone",
+        "label": "Phone Number",
+        "default": "+1 (270) 283-7950"
+      },
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "Email Address",
+        "default": "customersupport@quintonstoctonphotography.com"
+      },
+      {
+        "type": "text",
+        "id": "contact_location",
+        "label": "Location",
+        "default": "Glasgow, Kentucky"
+      }
+    ]
+  },
+  {
+    "name": "Social Media",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_facebook_url",
+        "label": "Facebook URL",
+        "default": "https://facebook.com/quintonstoctonphotography"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_url",
+        "label": "Instagram URL",
+        "default": "https://instagram.com/quintonstoctonphotography"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok_url",
+        "label": "TikTok URL",
+        "default": "https://www.tiktok.com/@quinton.s.photography"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_url",
+        "label": "YouTube URL",
+        "default": "https://youtube.com/@quintonstoctonphotography"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin_url",
+        "label": "LinkedIn URL",
+        "default": "https://www.linkedin.com/in/quintonstoctonphotography"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_url",
+        "label": "Pinterest URL",
+        "default": "https://pinterest.com/quintonstoctonphotography"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_url",
+        "label": "X (Twitter) URL",
+        "default": "https://x.com/qsphotographyky"
+      }
+    ]
+  }
+]

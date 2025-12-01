@@ -1,0 +1,405 @@
+{% comment %}
+  PORTFOLIO PAGE TEMPLATE
+  Shopify Liquid template for portfolio page
+  Displays filterable portfolio grid
+{% endcomment %}
+
+<!-- Hero Section -->
+<section class="portfolio-hero" data-section-id="{{ section.id }}" data-section-type="portfolio-hero">
+  <div class="portfolio-hero__inner">
+    <h1 class="portfolio-hero__title">
+      <span class="portfolio-hero__text--primary">Our</span> 
+      <span class="portfolio-hero__text--accent">Portfolio</span>
+    </h1>
+    <p class="portfolio-hero__subtitle">Showcasing our most impactful work across wedding photography, branding, and digital design.</p>
+  </div>
+</section>
+
+<!-- Filter Section -->
+<section class="filter-section" data-section-id="{{ section.id }}" data-section-type="portfolio-filter">
+  <div class="filter-section__inner">
+    <div class="filter-buttons" role="toolbar" aria-label="Portfolio Filters">
+      <button class="filter-btn filter-btn--active" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-btn" data-filter="weddings" aria-pressed="false">Weddings</button>
+      <button class="filter-btn" data-filter="portraits" aria-pressed="false">Portraits</button>
+      <button class="filter-btn" data-filter="branding" aria-pressed="false">Branding</button>
+      <button class="filter-btn" data-filter="events" aria-pressed="false">Events</button>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Grid -->
+<section class="portfolio-grid" data-section-id="{{ section.id }}" data-section-type="portfolio-grid">
+  <div class="portfolio-grid__inner" role="grid" aria-label="Portfolio Gallery">
+    <div class="portfolio-item" data-category="weddings" role="gridcell">
+      <div class="portfolio-item__image">
+        <i class="fas fa-image" aria-hidden="true"></i>
+      </div>
+      <div class="portfolio-item__overlay">
+        <h3 class="portfolio-item__title">Beautiful Ceremony</h3>
+        <p class="portfolio-item__category">Wedding Photography</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item" data-category="weddings" role="gridcell">
+      <div class="portfolio-item__image">
+        <i class="fas fa-image" aria-hidden="true"></i>
+      </div>
+      <div class="portfolio-item__overlay">
+        <h3 class="portfolio-item__title">Reception Moments</h3>
+        <p class="portfolio-item__category">Wedding Photography</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item" data-category="portraits" role="gridcell">
+      <div class="portfolio-item__image">
+        <i class="fas fa-image" aria-hidden="true"></i>
+      </div>
+      <div class="portfolio-item__overlay">
+        <h3 class="portfolio-item__title">Professional Headshot</h3>
+        <p class="portfolio-item__category">Portrait Photography</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item" data-category="portraits" role="gridcell">
+      <div class="portfolio-item__image">
+        <i class="fas fa-image" aria-hidden="true"></i>
+      </div>
+      <div class="portfolio-item__overlay">
+        <h3 class="portfolio-item__title">Family Session</h3>
+        <p class="portfolio-item__category">Portrait Photography</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item" data-category="branding" role="gridcell">
+      <div class="portfolio-item__image">
+        <i class="fas fa-image" aria-hidden="true"></i>
+      </div>
+      <div class="portfolio-item__overlay">
+        <h3 class="portfolio-item__title">Brand Identity</h3>
+        <p class="portfolio-item__category">Branding & Design</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item" data-category="branding" role="gridcell">
+      <div class="portfolio-item__image">
+        <i class="fas fa-image" aria-hidden="true"></i>
+      </div>
+      <div class="portfolio-item__overlay">
+        <h3 class="portfolio-item__title">Logo Design</h3>
+        <p class="portfolio-item__category">Branding & Design</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item" data-category="events" role="gridcell">
+      <div class="portfolio-item__image">
+        <i class="fas fa-image" aria-hidden="true"></i>
+      </div>
+      <div class="portfolio-item__overlay">
+        <h3 class="portfolio-item__title">Corporate Event</h3>
+        <p class="portfolio-item__category">Event Photography</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item" data-category="events" role="gridcell">
+      <div class="portfolio-item__image">
+        <i class="fas fa-image" aria-hidden="true"></i>
+      </div>
+      <div class="portfolio-item__overlay">
+        <h3 class="portfolio-item__title">Birthday Celebration</h3>
+        <p class="portfolio-item__category">Event Photography</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="portfolio-cta" data-section-id="{{ section.id }}" data-section-type="portfolio-cta">
+  <div class="portfolio-cta__inner">
+    <h2 class="portfolio-cta__title">
+      <span class="portfolio-cta__text--primary">Ready to</span> 
+      <span class="portfolio-cta__text--accent">Create?</span>
+    </h2>
+    <p class="portfolio-cta__description">Let's work together to bring your vision to life</p>
+    <a href="/pages/contact" class="button button--primary button--large">Get In Touch</a>
+  </div>
+</section>
+
+<style>
+  .portfolio-hero {
+    margin-top: 80px;
+    padding: 5rem 2rem 3rem;
+    text-align: center;
+    background: radial-gradient(ellipse at center, var(--color-base-primary) 0%, var(--color-base-background) 70%);
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .portfolio-hero__inner {
+    max-width: 900px;
+  }
+
+  .portfolio-hero__title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .portfolio-hero__text--accent {
+    color: var(--color-base-primary);
+  }
+
+  .portfolio-hero__subtitle {
+    font-size: 1.2rem;
+    color: #E5E0E0;
+  }
+
+  .filter-section {
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    background: #000;
+  }
+
+  .filter-section__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 0.8rem 1.8rem;
+    background: var(--color-base-border);
+    color: #fff;
+    border: 2px solid var(--color-base-border);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    text-transform: capitalize;
+  }
+
+  .filter-btn:hover,
+  .filter-btn--active {
+    background: var(--color-base-primary);
+    border-color: var(--color-base-primary);
+    transform: translateY(-2px);
+  }
+
+  .portfolio-grid {
+    padding: 3rem 2rem;
+    background: #000;
+  }
+
+  .portfolio-grid__inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .portfolio-item {
+    position: relative;
+    height: 300px;
+    background: var(--color-base-primary);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .portfolio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(186, 6, 6, 0.5);
+  }
+
+  .portfolio-item__image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, var(--color-base-primary) 0%, #8B0000 100%);
+  }
+
+  .portfolio-item__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+    transform: translateY(100%);
+    transition: transform 0.3s;
+  }
+
+  .portfolio-item:hover .portfolio-item__overlay {
+    transform: translateY(0);
+  }
+
+  .portfolio-item__title {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .portfolio-item__category {
+    color: #E5E0E0;
+    font-size: 0.9rem;
+  }
+
+  .portfolio-cta {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: #0a0a0a;
+  }
+
+  .portfolio-cta__inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .portfolio-cta__title {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .portfolio-cta__text--accent {
+    color: var(--color-base-primary);
+  }
+
+  .portfolio-cta__description {
+    font-size: 1.1rem;
+    color: #E5E0E0;
+    margin-bottom: 2rem;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background: var(--color-base-primary);
+    color: #fff;
+    border: 2px solid var(--color-base-primary);
+    border-radius: 5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+
+  .button:hover {
+    background: #8B0000;
+    border-color: #8B0000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(186, 6, 6, 0.4);
+  }
+
+  .button--large {
+    padding: 1.2rem 3rem;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .portfolio-hero {
+      margin-top: 60px;
+      padding: 3rem 1.5rem;
+      min-height: 250px;
+    }
+
+    .portfolio-hero__title {
+      font-size: 2rem;
+    }
+
+    .filter-section {
+      padding: 2rem 1.5rem;
+    }
+
+    .filter-buttons {
+      gap: 0.5rem;
+    }
+
+    .filter-btn {
+      padding: 0.7rem 1.2rem;
+      font-size: 0.85rem;
+    }
+
+    .portfolio-grid {
+      padding: 2rem 1.5rem;
+    }
+
+    .portfolio-grid__inner {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .portfolio-item {
+      height: 200px;
+    }
+
+    .portfolio-cta {
+      padding: 3rem 1.5rem;
+    }
+
+    .portfolio-cta__title {
+      font-size: 1.75rem;
+    }
+
+    .button {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    'use strict';
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+
+        // Update button states
+        filterButtons.forEach(btn => {
+          btn.classList.remove('filter-btn--active');
+          btn.setAttribute('aria-pressed', 'false');
+        });
+        button.classList.add('filter-btn--active');
+        button.setAttribute('aria-pressed', 'true');
+
+        // Filter items
+        portfolioItems.forEach(item => {
+          const category = item.dataset.category;
+          if (filter === 'all' || category === filter) {
+            item.style.display = 'block';
+            setTimeout(() => {
+              item.style.opacity = '1';
+            }, 10);
+          } else {
+            item.style.opacity = '0';
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  })();
+</script>

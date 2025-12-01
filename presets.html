@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Presets | Quinton Stocton Photography</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-presets {
+            margin-top: 80px;
+            padding: 5rem 1rem 3rem;
+            text-align: center;
+            background: radial-gradient(ellipse at center, #BA0606 0%, #000000 70%);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-presets h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .hero-presets h1 .red {
+            color: #BA0606;
+        }
+
+        .hero-presets p {
+            font-size: 1.2rem;
+            color: #E5E0E0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .presets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .preset-card {
+            background: #1a1a1a;
+            border: 2px solid #BA0606;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 30px rgba(186, 6, 6, 0.3);
+        }
+
+        .preset-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 40px rgba(186, 6, 6, 0.5);
+        }
+
+        .preset-image {
+            width: 100%;
+            height: 250px;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #BA0606;
+            font-size: 3rem;
+            overflow: hidden;
+        }
+
+        .preset-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .preset-card h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            min-height: 3rem;
+        }
+
+        .preset-card p {
+            color: #E5E0E0;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .preset-pricing {
+            margin-bottom: 1rem;
+        }
+
+        .preset-price {
+            color: #BA0606;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .preset-original-price {
+            color: #999;
+            font-size: 0.9rem;
+            text-decoration: line-through;
+            margin-left: 0.5rem;
+        }
+
+        .preset-link {
+            display: inline-block;
+            background: #BA0606;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .preset-link:hover {
+            background: #8B0000;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .presets-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+                padding: 3rem 1rem;
+            }
+
+            .hero-presets h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Drawer Navigation -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <nav class="drawer-nav" id="drawerNav">
+        <div class="drawer-header">
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+            <button class="drawer-close" id="drawerClose">&times;</button>
+        </div>
+        <ul class="drawer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#collections">Collections</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+            <li><a href="affiliate.html">Affiliate Links</a></li>
+            <li><a href="social.html">Social</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="social-icons drawer-social-icons"><a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a><a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a><a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a><a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a><a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a></div>
+    </nav>
+
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-left">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">
+                <span class="white">Quinton Stocton</span>
+                <span class="red">Photography</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#collections">Collections</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+            <li><a href="affiliate.html">Affiliate Links</a></li>
+            <li><a href="social.html">Social</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-presets">
+        <h1><span class="white">Premium Digital</span> <span class="red">Presets</span></h1>
+        <p>Professional Lightroom presets and color grading packs for photographers and content creators.</p>
+    </section>
+
+    <!-- Presets Grid -->
+    <section class="presets-grid">
+        <div class="preset-card">
+            <div class="preset-image"><i class="fas fa-sliders-h"></i></div>
+            <div class="preset-content">
+                <h3>Coastal Cream Lifestyle</h3>
+                <p>Lightroom Preset Pack by Quinton Stocton Photography - Warm, inviting coastal tones.</p>
+                <div class="preset-pricing">
+                    <span class="preset-price">$14.99</span>
+                    <span class="preset-original-price">$19.99</span>
+                </div>
+                <a href="https://quintonstoctonphotography.com/products/coastal-cream-lifestyle-lightroom-preset-pack-by-quinton-stocton-photography" target="_blank" class="preset-link">View Details</a>
+            </div>
+        </div>
+
+        <div class="preset-card">
+            <div class="preset-image"><i class="fas fa-sliders-h"></i></div>
+            <div class="preset-content">
+                <h3>Autumn Earthy Mood</h3>
+                <p>Lightroom Preset Pack by Quinton Stocton Photography - Rich, earthy autumn tones.</p>
+                <div class="preset-pricing">
+                    <span class="preset-price">$14.99</span>
+                    <span class="preset-original-price">$19.99</span>
+                </div>
+                <a href="https://quintonstoctonphotography.com/products/autumn-earthy-mood-lightroom-preset-pack-by-quinton-stocton-photography" target="_blank" class="preset-link">View Details</a>
+            </div>
+        </div>
+
+        <div class="preset-card">
+            <div class="preset-image"><i class="fas fa-sliders-h"></i></div>
+            <div class="preset-content">
+                <h3>Cinematic Mood</h3>
+                <p>QSP Lightroom Preset Pack - Cinematic color grades for dramatic visual storytelling.</p>
+                <div class="preset-pricing">
+                    <span class="preset-price">$14.99</span>
+                    <span class="preset-original-price">$19.99</span>
+                </div>
+                <a href="https://quintonstoctonphotography.com/products/qsp-cinematic-mood-lightroom-preset-pack" target="_blank" class="preset-link">View Details</a>
+            </div>
+        </div>
+
+        <div class="preset-card">
+            <div class="preset-image"><i class="fas fa-sliders-h"></i></div>
+            <div class="preset-content">
+                <h3>Signature Bright and Airy</h3>
+                <p>Lightroom Preset Pack by Quinton Stocton Photography - Clean, bright, and airy aesthetic.</p>
+                <div class="preset-pricing">
+                    <span class="preset-price">$14.99</span>
+                    <span class="preset-original-price">$19.99</span>
+                </div>
+                <a href="https://quintonstoctonphotography.com/products/signature-bright-and-airy-lightroom-preset-pack-by-quinton-stocton-photography" target="_blank" class="preset-link">View Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <span class="white">Quinton Stocton</span>
+            <span class="red">Photography</span>
+        </div>
+        <p style="color: #E5E0E0; margin-bottom: 1rem;">Capturing Moments, Crafting Memories; Preserving The Essence Of You.</p>
+        
+        <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="index.html#collections">Collections</a>
+            <a href="index.html#services">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="index.html#reviews">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="social-icons" id="social">
+            <a href="https://facebook.com/quintonstoctonphotography" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/quintonstoctonphotography" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@quinton.s.photography" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/qsphotographyky" target="_blank" title="X"><i class="fab fa-x"></i></a>
+            <a href="https://www.linkedin.com/in/quintonstoctonphotography" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@quintonstoctonphotography" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://pinterest.com/quintonstoctonphotography" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://linktr.ee/quintonstoctonphotography" target="_blank" title="Linktree"><i class="fas fa-link"></i></a>
+        </div>
+
+        <div class="footer-info">
+            <p>Based in Glasgow, Kentucky</p>
+            <p>© 2025 Quinton Stocton Photography. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
